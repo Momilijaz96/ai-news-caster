@@ -1,6 +1,7 @@
 # AI News Sources — dev tools + research focus
 
 rss_feeds:
+  # Lab blogs — model releases, research, APIs
   - name: "OpenAI Blog"
     url: "https://openai.com/blog/rss.xml"
     priority: high
@@ -9,28 +10,42 @@ rss_feeds:
     url: "https://www.anthropic.com/news/rss.xml"
     priority: high
 
+  - name: "Google DeepMind"
+    url: "https://www.deepmind.com/blog/rss.xml"
+    priority: high
+
+  - name: "Google Research"
+    url: "https://research.google/blog/rss/"
+    priority: high
+
+  # Community & practitioner voices
+  - name: "Latent Space"
+    url: "https://www.latent.space/feed"
+    priority: high
+
   - name: "HuggingFace Blog"
     url: "https://huggingface.co/blog/feed.xml"
     priority: high
 
-  - name: "Arxiv CS.AI"
-    url: "https://export.arxiv.org/rss/cs.AI"
+  - name: "Import AI"
+    url: "https://importai.substack.com/feed"
     priority: high
 
-  - name: "Latent Space"
-    url: "https://www.latent.space/feed"
+  - name: "One Useful Thing"
+    url: "https://oneusefulthing.substack.com/feed"
     priority: high
+
+  # Tools & infra
+  - name: "NVIDIA Developer Blog"
+    url: "https://blogs.nvidia.com/feed/"
+    priority: medium
 
   - name: "Simon Willison"
     url: "https://simonwillison.net/atom/everything/"
     priority: medium
 
-  - name: "GitHub Changelog"
-    url: "https://github.blog/changelog/feed/"
-    priority: medium
-
-  - name: "The Pragmatic Engineer"
-    url: "https://newsletter.pragmaticengineer.com/feed"
+  - name: "Ben's Bites"
+    url: "https://bens.substack.com/feed"
     priority: medium
 
 # Filtering
@@ -45,6 +60,9 @@ keywords_boost:
   - "framework"
   - "agent"
   - "launch"
+  - "research"
+  - "training"
+  - "inference"
 
 keywords_skip:
   - "sponsored"
