@@ -1,0 +1,41 @@
+یار، آج 21 فروری 2026 ہے — آج AI میں کیا ہو رہا ہے سنو۔ کافی interesting چیزیں آئی ہیں۔
+
+آج پانچ چیزیں — پہلی: Google کا Gemini 3.1 Pro آ گیا ہے جو ARC-AGI benchmarks پر اپنے پرانے version سے دگنا بہتر performance دے رہا ہے۔ دوسری: HuggingFace نے GGML اور llama.cpp کو officially اپنے ساتھ ملا لیا ہے جو local AI کے لیے huge news ہے۔ تیسری: ایک کینیڈین startup نے custom hardware بنایی ہے جو Llama models کو 17 ہزار tokens per second کی رفتار سے چلا سکتی ہے۔ چوتھی: OpenAI نے اپنے GPT models کو First Proof math challenge پر test کیا ہے۔ پانچویں: GitHub Copilot میں کافی updates آئی ہیں، خاص طور پر Gemini 3.1 Pro کا integration۔ چلو detail میں چلتے ہیں۔
+
+ٹھیک ہے، اب پہلی والی پر آتے ہیں۔ Google کا Gemini 3.1 Pro release ہوا ہے اور یار، یہ واقعی impressive لگ رہا ہے۔ ARC-AGI 2 benchmark پر یہ Gemini 3.0 سے دوگنا بہتر performance دے رہا ہے۔ ARC-AGI اگر آپ کو نہیں پتا تو یہ basically reasoning اور pattern recognition test کرتا ہے جو کہ AGI کی direction میں ایک important metric سمجھا جاتا ہے۔
+
+Pricing کی بات کریں تو یہ 2 ڈالر per million input tokens اور 12 ڈالر per million output tokens ہے 200K تک، اور اس کے بعد 4 اور 18 ڈالر ہو جاتا ہے۔ یہ Claude Opus 4.6 سے آدھی price میں similar benchmark scores دے رہا ہے، جو کہ developers کے لیے کافی attractive ہے۔ مجھے لگتا ہے یہ pricing war میں ایک solid move ہے Google کی طرف سے۔
+
+اب دوسری بات کرتے ہیں۔ HuggingFace نے GGML اور llama.cpp کو officially join کر لیا ہے اپنے ecosystem میں۔ یہ local AI کے لیے huge news ہے کیونکہ GGML اور llama.cpp community میں local model deployment کے لیے سب سے popular tools ہیں۔ ان کا HuggingFace کے ساتھ official integration مطلب یہ ہے کہ اب local AI development میں long-term stability اور support ملے گی۔
+
+یہ خاص طور پر ان developers کے لیے important ہے جو privacy concerns کی وجہ سے cloud-based APIs استعمال نہیں کرنا چاہتے، یا پھر جن کو latency اور cost کے مسائل ہیں۔ HuggingFace کا ecosystem اور GGML کی efficiency کا combination واقعی powerful ہے۔ مجھے لگتا ہے یہ local AI deployment میں game changer ثابت ہوگا۔
+
+تیسری بات، جو مجھے سب سے زیادہ exciting لگی، یہ Taalas کی custom hardware ہے۔ یہ کینیڈین startup نے ایک custom ASIC chip بنایی ہے جو specifically Llama 3.1 8B model کے لیے optimized ہے۔ اور یار، یہ 17 ہزار tokens per second کی speed دے رہی ہے۔ 17 ہزار! یہ اتنی تیز ہے کہ demo video میں text typing کی بجائے almost instantly appear ہو رہا ہے۔
+
+یہ custom ASIC approach کافی interesting ہے کیونکہ general purpose GPUs کی بجائے specific model architectures کے لیے optimize کر رہے ہیں۔ Performance کے اعتبار سے یہ paradigm shift ہو سکتا ہے، خاص طور پر inference کے لیے۔ ہاں، trade-off یہ ہے کہ یہ صرف specific model کے لیے ہے، لیکن اگر آپ کو پتا ہے کہ آپ کو کون سا model استعمال کرنا ہے تو یہ amazing solution ہے۔
+
+چوتھی بات OpenAI کے First Proof submissions کی۔ OpenAI نے اپنے AI model کو First Proof math challenge پر test کیا ہے۔ یہ research-grade mathematical reasoning کا test ہے جو expert-level problems پر focus کرتا ہے۔ یہ step towards formal mathematical reasoning ہے، جو کہ AI research میں quite challenging area ہے۔
+
+Mathematical proof generation میں AI کا performance دیکھنا interesting ہے کیونکہ یہ pure logical reasoning require کرتا ہے۔ اگرچہ ابھی تک detailed results نہیں آئے، لیکن یہ direction promising ہے research community کے لیے۔ Formal verification اور theorem proving میں AI کی capabilities بہتر ہونا scientific computing اور software verification کے لیے کافی useful ہوگا۔
+
+اب GitHub Copilot کی updates کی بات کرتے ہیں۔ سب سے بڑی news یہ ہے کہ Gemini 3.1 Pro اب GitHub Copilot میں public preview میں available ہے۔ یہ Google کے latest agentic coding model کو Copilot ecosystem میں integrate کرتا ہے۔ Early testing کے مطابق یہ edit-then-test loops میں کافی effective ہے اور tool usage میں بھی high performance دے رہا ہے۔
+
+GitHub نے Copilot coding agent کے لیے model picker بھی introduce کیا ہے Business اور Enterprise users کے لیے۔ اب آپ different models کے بیچ choose کر سکتے ہیں depending on your specific use case۔ یہ flexibility developers کو مختلف tasks کے لیے appropriate model select کرنے میں help کرے گی۔
+
+Organization-level Copilot usage metrics dashboard بھی public preview میں آ گیا ہے۔ پہلے یہ صرف enterprise level پر available تھا، اب smaller organizations بھی اپنی Copilot usage track کر سکتی ہیں۔ اس کے ساتھ pull request throughput اور time to merge metrics بھی API میں add ہوئے ہیں، جو ROI measurement کے لیے useful ہے۔
+
+Zed editor کے لیے GitHub Copilot support بھی officially general availability میں آ گیا ہے۔ اب آپ اپنا Copilot Pro یا Business subscription Zed میں directly استعمال کر سکتے ہیں official support کے ساتھ۔
+
+یہ سب updates دیکھ کے لگتا ہے کہ GitHub Copilot ecosystem کافی mature ہو رہا ہے۔ Multiple models کی choice، better metrics، اور broader editor support سے developer experience improve ہو رہا ہے۔
+
+ایک اور interesting development یہ ہے کہ OpenAI نے اپنے GPT-5.3-Codex-Spark کو 30 فیصد faster بنا دیا ہے، اور اب یہ 1200 tokens per second serve کر رہا ہے۔ یہ Taalas کی hardware سے تو کم ہے لیکن cloud-based service کے لیے قابل قدر improvement ہے۔ خاص طور پر code generation کے لیے یہ speed بہت important ہے کیونکہ developers کو real-time feedback چاہیے۔
+
+HuggingFace کی ایک اور exciting announcement یہ ہے کہ اب آپ Unsloth کے ساتھ AI models free میں train کر سکتے ہیں HuggingFace Jobs استعمال کر کے۔ Unsloth ایک tool ہے جو fine-tuning کو کافی efficient بناتا ہے، اور اب اس کا HuggingFace Jobs کے ساتھ integration مطلب یہ ہے کہ smaller teams اور individual researchers بھی free computing resources استعمال کر کے اپنے models train کر سکیں گے۔
+
+یہ democratization of AI development کی direction میں important step ہے۔ پہلے model training expensive GPU clusters require کرتا تھا، اب free resources کے ساتھ experimentation آسان ہو جائے گی۔
+
+Overall آج کا دن AI development میں کافی productive رہا۔ Hardware innovations، model improvements، tooling advancements، اور ecosystem integration سب میں progress نظر آ رہی ہے۔ خاص طور پر local AI، custom hardware، اور developer tools میں جو developments ہو رہی ہیں، وہ next few months میں کافی impact کرنے والی ہیں۔
+
+Pricing competition بھی interesting ہے، Google کا Gemini 3.1 Pro کافی competitive price پر strong performance دے رہا ہے، جو developers کے لیے good news ہے۔ Hardware side پر Taalas جیسی companies کا approach دکھاتا ہے کہ specialized solutions میں کتنی potential ہے۔
+
+بس یار، اتنا تھا آج کا — کل ملتے ہیں۔

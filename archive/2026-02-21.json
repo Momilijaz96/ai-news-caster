@@ -203,7 +203,7 @@
       "priority": "medium"
     }
   ],
-  "script_path": "scripts/briefing-2026-02-21.txt",
+  "urdu_script_path": "scripts/briefing-2026-02-21-urdu.txt",
   "audio_path": "audio/briefing-2026-02-21.mp3",
-  "script_word_count": 1556
+  "urdu_script_word_count": 1134
 }
