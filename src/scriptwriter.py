@@ -20,25 +20,42 @@ def build_prompt(entries: list[dict], config: dict) -> str:
         entries_text += f"   Published: {entry['published']}\n"
         entries_text += f"   Summary: {entry['summary']}\n"
 
-    return f"""You are writing a daily AI news briefing script that will be read aloud as a podcast/audio briefing.
+    return f"""Tu ek AI news briefing likh raha hai jo audio mein sunai degi — jaise koi dost subah chai pe AI ki latest cheezein bata raha ho.
 
-FROM THE FOLLOWING NEWS ENTRIES, pick the top 5-{max_stories} most important, interesting, or impactful stories. Then write a complete briefing script.
+Neeche diye gaye news entries mein se top 5-{max_stories} pick kar — woh jo actual mein kaam ki hain developers aur researchers ke liye. Phir poora script likh.
 
 NEWS ENTRIES:
 {entries_text}
 
-REQUIREMENTS:
-- Pick 5-{max_stories} stories. Prioritize: major releases, breakthroughs, safety/regulation news, open source launches.
-- Write a script that takes about {target_minutes} minutes to read aloud (~150 words per minute, so ~{target_minutes * 150} words).
-- Tone: casual, like you're catching up with a smart friend over coffee. Concise and simple - no jargon dumps.
-- Include a brief intro/greeting and a sign-off.
-- For each story: explain what happened, why it matters, keep it high-level.
-- Transition naturally between stories.
-- Do NOT use markdown, headers, bullet points, or any formatting. This is a spoken script - write it as natural speech.
-- Do NOT include stage directions, sound cues, or [brackets].
-- Write the COMPLETE script, ready to be read aloud word-for-word.
+STRUCTURE (bilkul isi order mein):
 
-Write the script now."""
+1. INTRO (2 lines):
+   Seedha shuru ho. Kuch aisa: "Yaar, [date] hai — aaj AI mein kya ho raha hai sunlo." Koi lengthy greeting nahi.
+
+2. ESPRESSO SHOT (30-40 seconds):
+   Aaj ki top 3 cheezein ek ek line mein, ekdum punch ke saath. Kuch aisa:
+   "Aaj teen cheezein — pehli: [1 line]. Doosri: [1 line]. Teesri: [1 line]. Chalo detail mein chalte hain."
+
+3. STORY DETAILS (har story ke liye):
+   Har story ko 2-3 minute do. Transition natural rakho jaise "Theek hai, ab pehli wali pe aate hain..." ya "Ab doosri baat..."
+   Har story mein: kya hua, kyun matter karta hai developer/researcher ke liye, teri apni honest rai.
+
+4. SIGN OFF (1 line):
+   "Bas yaar, itna tha aaj ka — kal milte hain."
+
+TONE RULES:
+- Roman Urdu mein likh — jaise Pakistani log actually bolte hain. Technical terms English mein rehne do (model, benchmark, API, framework, open source, paper, etc.)
+- Bilkul casual — koi anchoring nahi, koi formal language nahi
+- Opinions daal — "yeh actually kafi solid hai", "mujhe nahi lagta yeh kuch khas hai", "yeh interesting hai kyunki..."
+- Chhote chhote sentences, natural pauses
+- Total script {target_minutes} minutes ka hona chahiye (~{target_minutes * 150} words at 150 wpm)
+
+FORMATTING:
+- Koi markdown nahi, koi headers nahi, koi bullet points nahi — yeh spoken script hai
+- Koi stage directions ya [brackets] nahi
+- Poora script likh, word-for-word ready to read aloud
+
+Ab script likh."""
 
 
 def write_script(entries: list[dict], config_path: str = "config/config.yaml") -> str:
