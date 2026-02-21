@@ -44,7 +44,15 @@ client.on('qr', (qr) => {
   console.log('Scan the QR code above to authenticate WhatsApp.');
 });
 
+// Timeout guard: if WhatsApp never becomes ready (bad session, network), exit after 2 min
+const READY_TIMEOUT_MS = 2 * 60 * 1000;
+const readyTimeout = setTimeout(() => {
+  console.error('Timed out waiting for WhatsApp to become ready. Check session validity.');
+  process.exit(1);
+}, READY_TIMEOUT_MS);
+
 client.on('ready', async () => {
+  clearTimeout(readyTimeout);
   console.log('WhatsApp client ready. Sending briefing...');
 
   const chatId = `${targetNumber}@c.us`;
@@ -72,6 +80,7 @@ client.on('ready', async () => {
 
   } catch (err) {
     console.error('Failed to send:', err);
+    await client.destroy().catch(() => {});
     process.exit(1);
   }
 
