@@ -4,7 +4,7 @@
 output:
   audio_format: "mp3"
   target_duration_minutes: 12  # Aim for 10-15 min
-  voice: "nova"  # OpenAI voice or ElevenLabs voice ID
+  voice: "en-US-JennyNeural"  # edge-tts voice
   
 # Delivery
 delivery:
@@ -31,8 +31,7 @@ llm:
   model: "claude-sonnet-4-20250514"
   max_tokens: 4000
 
-# TTS settings  
+# TTS settings
 tts:
-  provider: "openai"  # openai, elevenlabs
-  voice: "nova"
-  speed: 1.0
+  provider: "edge-tts"  # free, no API key required
+  voice: "en-US-JennyNeural"
