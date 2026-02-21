@@ -1,0 +1,97 @@
+{
+  "date": "2026-02-22",
+  "entries_found": 11,
+  "entries": [
+    {
+      "title": "Our First Proof submissions",
+      "link": "https://openai.com/index/first-proof-submissions",
+      "summary": "We share our AI model\u2019s proof attempts for the First Proof math challenge, testing research-grade reasoning on expert-level problems.",
+      "published": "2026-02-20T14:30:00+00:00",
+      "source": "OpenAI Blog",
+      "priority": "high"
+    },
+    {
+      "title": "[AINews] The Custom ASIC Thesis",
+      "link": "https://www.latent.space/p/ainews-the-custom-asic-thesis",
+      "summary": "Taalas HC1 runs 16,960 tok/s/user Llama 3.1 8B with custom silicon. Actually fast LLMs are on their way...",
+      "published": "2026-02-21T02:45:01+00:00",
+      "source": "Latent Space",
+      "priority": "high"
+    },
+    {
+      "title": "[AINews] Gemini 3.1 Pro: 2x 3.0 on ARC-AGI 2",
+      "link": "https://www.latent.space/p/ainews-gemini-31-pro-2x-30-on-arc",
+      "summary": "It&#8217;s Google&#8217;s turn.",
+      "published": "2026-02-20T07:15:49+00:00",
+      "source": "Latent Space",
+      "priority": "high"
+    },
+    {
+      "title": "GGML and llama.cpp join HF to ensure the long-term progress of Local AI",
+      "link": "https://huggingface.co/blog/ggml-joins-hf",
+      "summary": "",
+      "published": "2026-02-20T00:00:00+00:00",
+      "source": "HuggingFace Blog",
+      "priority": "high"
+    },
+    {
+      "title": "Train AI models with Unsloth and Hugging Face Jobs for FREE",
+      "link": "https://huggingface.co/blog/unsloth-jobs",
+      "summary": "",
+      "published": "2026-02-20T00:00:00+00:00",
+      "source": "HuggingFace Blog",
+      "priority": "high"
+    },
+    {
+      "title": "Quoting Thibault Sottiaux",
+      "link": "https://simonwillison.net/2026/Feb/21/thibault-sottiaux/#atom-everything",
+      "summary": "<blockquote cite=\"https://twitter.com/thsottiaux/status/2024947946849186064\"><p>We\u2019ve made GPT-5.3-Codex-Spark about 30% faster. It is now serving at over 1200 tokens per second.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://twitter.com/thsottiaux/status/2024947946849186064\">Thibault Sottiaux</a>, OpenAI</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</",
+      "published": "2026-02-21T01:30:21+00:00",
+      "source": "Simon Willison",
+      "priority": "medium"
+    },
+    {
+      "title": "Andrej Karpathy talks about \"Claws\"",
+      "link": "https://simonwillison.net/2026/Feb/21/claws/#atom-everything",
+      "summary": "<p><strong><a href=\"https://twitter.com/karpathy/status/2024987174077432126\">Andrej Karpathy talks about &quot;Claws&quot;</a></strong></p>\nAndrej Karpathy tweeted a mini-essay about buying a Mac Mini (\"The apple store person told me they are selling like hotcakes and everyone is confused\") to tinker with Claws:</p>\n<blockquote>\n<p>I'm definitely a bit sus'd to run OpenClaw specifically [...] But I do love the concept and I think that just like LLM agents were a new layer on top of LLMs, Claws a",
+      "published": "2026-02-21T00:37:45+00:00",
+      "source": "Simon Willison",
+      "priority": "medium"
+    },
+    {
+      "title": "Adding TILs, releases, museums, tools and research to my blog",
+      "link": "https://simonwillison.net/2026/Feb/20/beats/#atom-everything",
+      "summary": "<p>I've been wanting to add indications of my various other online activities to my blog for a while now. I just turned on a new feature I'm calling \"beats\" (after story beats, naming this was hard!) which adds five new types of content to my site, all corresponding to activity elsewhere.</p>\n<p>Here's what beats look like:</p>\n<p><img alt=\"Screenshot of a fragment of a page showing three entries from 30th Dec 2025. First: [RELEASE] &quot;datasette-turnstile 0.1a0 \u2014 Configurable CAPTCHAs for Dat",
+      "published": "2026-02-20T23:47:10+00:00",
+      "source": "Simon Willison",
+      "priority": "medium"
+    },
+    {
+      "title": "Taalas serves Llama 3.1 8B at 17,000 tokens/second",
+      "link": "https://simonwillison.net/2026/Feb/20/taalas/#atom-everything",
+      "summary": "<p><strong><a href=\"https://taalas.com/the-path-to-ubiquitous-ai/\">Taalas serves Llama 3.1 8B at 17,000 tokens/second</a></strong></p>\nThis new Canadian hardware startup just announced their first product - a custom hardware implementation of the Llama 3.1 8B model (from <a href=\"https://simonwillison.net/2024/Jul/23/introducing-llama-31/\">July 2024</a>) that can run at a staggering 17,000 tokens/second.</p>\n<p>I was going to include a video of their demo but it's so fast it would look more like",
+      "published": "2026-02-20T22:10:04+00:00",
+      "source": "Simon Willison",
+      "priority": "medium"
+    },
+    {
+      "title": "Quoting Thariq Shihipar",
+      "link": "https://simonwillison.net/2026/Feb/20/thariq-shihipar/#atom-everything",
+      "summary": "<blockquote cite=\"https://twitter.com/trq212/status/2024574133011673516\"><p>Long running agentic products like Claude Code are made feasible by prompt caching which allows us to reuse computation from previous roundtrips and significantly decrease latency and cost. [...]</p>\n<p>At Claude Code, we build our entire harness around prompt caching. A high prompt cache hit rate decreases costs and helps us create more generous rate limits for our subscription plans, so we run alerts on our prompt cach",
+      "published": "2026-02-20T07:13:19+00:00",
+      "source": "Simon Willison",
+      "priority": "medium"
+    },
+    {
+      "title": "Recovering lost code",
+      "link": "https://simonwillison.net/2026/Feb/19/recovering-lost-code/#atom-everything",
+      "summary": "<p>Reached the stage of parallel agent psychosis where I've lost a whole feature - I know I had it yesterday, but I can't seem to find the branch or worktree or cloud instance or checkout with it in.</p>\n<p>... found it! Turns out I'd been hacking on a random prototype in <code>/tmp</code> and then my computer crashed and rebooted and I lost the code... but it's all still there in <code>~/.claude/projects/</code> session logs and Claude Code can extract it out and spin up the missing feature aga",
+      "published": "2026-02-19T23:48:35+00:00",
+      "source": "Simon Willison",
+      "priority": "medium"
+    }
+  ],
+  "script_path": "scripts/briefing-2026-02-22.txt",
+  "audio_path": "audio/briefing-2026-02-22.mp3",
+  "script_word_count": 720
+}
