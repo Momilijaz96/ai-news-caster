@@ -41,7 +41,11 @@ def run():
     # Step 3: Generate audio
     print(f"\n[3/3] Generating audio...")
     audio_path = f"audio/briefing-{today}.mp3"
-    generate_audio(script, audio_path)
+    try:
+        generate_audio(script, audio_path)
+    except Exception as e:
+        print(f"  Error: TTS generation failed: {e}")
+        sys.exit(1)
 
     # Step 4: Archive
     archive_path = f"archive/{today}.json"

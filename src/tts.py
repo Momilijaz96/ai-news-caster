@@ -13,7 +13,7 @@ async def _generate_audio_async(script: str, output_path: str, voice: str) -> No
     await communicate.save(output_path)
 
 
-def generate_audio(script: str, output_path: str, config_path: str = "config/config.yaml") -> str:
+def generate_audio(script: str, output_path: str) -> str:
     """Generate MP3 audio from script text using edge-tts.
 
     edge-tts uses Microsoft Edge's TTS service and handles long text natively
