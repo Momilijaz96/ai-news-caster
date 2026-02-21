@@ -32,9 +32,10 @@ NEWS ENTRIES:
 
 STRUCTURE:
 
-1. COLD OPEN (1 sentence):
-   Lead with the most exciting thing. Drop straight in — no greeting, no "hey".
-   Example: "Someone just open-sourced a model that's running circles around GPT-4. That's today's headline."
+1. GREETING (1-2 sentences):
+   Warm, casual welcome. Like texting a friend. Use the date naturally.
+   Example: "Hey! Happy Sunday — hope you're having a good one. Got some spicy AI news for you today."
+   Or: "Good morning! It's [day], and the AI world did not take the weekend off."
 
 2. THREE STORIES:
    For each story — exactly 3 sentences:
