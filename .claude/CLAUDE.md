@@ -67,6 +67,30 @@ pip install -r requirements.txt
 python -m src.main
 ```
 
+## WhatsApp Delivery
+Use the `openclaw` CLI (already installed and running on this machine):
+
+```bash
+openclaw message send --channel whatsapp \
+  --target +923479075154 \
+  --media <path-to-audio.mp3> \
+  --message "🎙️ Your AI briefing is ready"
+```
+
+In Python:
+```python
+import subprocess
+
+def deliver_whatsapp(audio_path):
+    subprocess.run([
+        "openclaw", "message", "send",
+        "--channel", "whatsapp",
+        "--target", "+923479075154",
+        "--media", audio_path,
+        "--message", "🎙️ Your AI briefing is ready"
+    ], check=True)
+```
+
 ## TODO
 ### Phase 1 — Daily Delivery
 - [ ] Test end-to-end run
