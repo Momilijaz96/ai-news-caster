@@ -19,9 +19,13 @@ def generate_audio(script: str, output_path: str) -> str:
     client = ElevenLabs(api_key=api_key)
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
 
+    # Strip stage directions that shouldn't be read aloud
+    import re
+    clean_script = re.sub(r'\[pause\]', '', script).strip()
+
     print(f"  Generating audio with ElevenLabs (Jessica)...")
     audio = client.text_to_speech.convert(
-        text=script,
+        text=clean_script,
         voice_id=VOICE_ID,
         model_id=MODEL_ID,
         output_format="mp3_44100_128",

@@ -1,11 +1,23 @@
-Someone just served Llama 3.1 at seventeen thousand tokens per second using custom silicon. That's not a typo — seventeen thousand.
+Hey Momal, happy Sunday morning! The AI world is having an identity crisis and developers are picking sides. We've got ggml joining Hugging Face, every AI assistant becoming an ad network, and "claws" as the hottest new agent architecture.
 
-Canadian startup Taalas just dropped their custom ASIC chip that makes current AI inference look glacially slow. Meanwhile OpenAI's quietly flexing too — their new GPT-5.3-Codex-Spark is now cranking out twelve hundred tokens per second, thirty percent faster than before. The speed wars are heating up and honestly, this changes everything for real-time AI.
+Here's what you need to know.
 
-Google fired back at OpenAI today with Gemini 3.1 Pro, claiming it scores twice as high as the previous version on ARC-AGI tests. Translation: Google thinks they're winning the reasoning race now, and they want everyone to know it.
+First up: ggml.ai just joined Hugging Face to secure the future of local AI.
 
-OpenAI showed us their AI's first attempts at proving graduate-level math theorems for something called the First Proof challenge. The submissions are messy, the logic is wonky, but watching an AI try to think through expert math problems? Kind of wild to see the thought process laid bare.
+[pause]
 
-Hugging Face just absorbed GGML and llama.cpp — that's the code powering most local AI setups right now. Big move for keeping AI models running on your laptop instead of big tech's servers, and honestly not sure if this centralizes things more or keeps them open.
+This is huge. The team behind llama.cpp — the tool that lets you run models on your laptop instead of begging OpenAI — is now officially part of Hugging Face. They're promising to keep the local AI dream alive with proper funding and resources. Eight hundred points on Hacker News doesn't lie. This feels like the moment local AI went from scrappy hobby project to legitimate alternative to Big Tech's cloud monopoly.
 
-Full details and links in the description — catch you tomorrow.
+And speaking of Big Tech shenanigans, every company building AI assistants is apparently just an ad company now.
+
+[pause]
+
+Someone finally said the quiet part out loud. That helpful AI assistant suggesting restaurants? It's getting paid to push certain spots. The productivity tool recommending software? Commission city. Developers are realizing we're not building the future — we're building really smart billboards that pretend to be your friend. The comment section is brutal and everyone knows it's true.
+
+But wait, it gets weirder — Karpathy just dropped something called "claws" and five hundred comments exploded.
+
+[pause]
+
+Apparently claws are the new hotness for AI agent coordination. Instead of one confused bot trying to do everything, you get specialized agents with specific tools working together. The technical details are still fuzzy but when Karpathy tweets, developers listen. Half the comments are trying to figure out what this actually means, the other half are already building prototypes.
+
+That's your AI fix for Sunday, February 22. Links and full details below — see you tomorrow.

@@ -21,45 +21,60 @@ def _entries_text(entries: list[dict], max_stories: int) -> str:
 def build_audio_prompt(entries: list[dict], config: dict) -> str:
     max_stories = config.get("style", {}).get("max_stories", 8)
 
-    return f"""You're a senior ML engineer writing a 3-minute spoken audio briefing for fellow developers.
+    from datetime import datetime
+    import zoneinfo
+    now = datetime.now(zoneinfo.ZoneInfo("Asia/Dubai"))
+    today = now.strftime("%A, %B %-d")  # e.g. "Sunday, February 22"
 
-Your job: pick the 3 stories that are actually causing a stir right now. Things people are sharing, debating, or excited about. Trending GitHub repos, viral model releases, hot HN threads, things that make developers stop and go "wait, what?"
+    return f"""You are the host of a friendly morning AI news briefing — think Morning Brew but for developers. Casual, warm, smart. Easy to absorb with your first coffee.
 
-Skip anything boring, incremental, or corporate PR. If a story wouldn't make a developer stop scrolling, don't pick it.
+Pick the 3 best stories from the entries below. Best = actually buzzing right now. Things developers are sharing, debating, excited or freaked out about.
+
+TODAY'S DATE: {today}
 
 NEWS ENTRIES:
 {_entries_text(entries, max_stories)}
 
-STRUCTURE:
+STRUCTURE — follow this exactly:
 
-1. GREETING (1-2 sentences):
-   Warm, casual welcome. Like texting a friend. Use the date naturally.
-   Example: "Hey! Happy Sunday — hope you're having a good one. Got some spicy AI news for you today."
-   Or: "Good morning! It's [day], and the AI world did not take the weekend off."
+1. OPENER — GREETING + STAKES + RAPID TEASE (3 sentences MAX)
+   Sentence 1: Warm, punchy hello — address the listener by name: Momal. Like a friend who's excited to catch up.
+   Sentence 2: Set the energy — bold claim or mood-setter about what's going on in AI today.
+   Sentence 3: Rapid-fire all 3 story names back-to-back — just the titles, no details, make them curious.
+   Example: "Hey Momal, happy Sunday morning! The AI world did not sleep this weekend. We've got llama.cpp getting acquired, a viral tool to block AI slop, and a wild AI agent drama."
+   Then add a DIVE-IN LINE — one punchy sentence that transitions into the stories.
+   Example: "Alright, let's get into it." or "Here's what you need to know." or "Let's break it down."
 
-2. THREE STORIES:
-   For each story — exactly 3 sentences:
-   - What happened (1 sentence, concrete and specific)
-   - Why developers should care (1 sentence)
-   - Your honest reaction (1 sentence — excited, skeptical, impressed, whatever's real)
+2. STORY RUNDOWN — for each of the 3 stories:
+   a) HOOK LINE (1 sentence — the punchy headline drop)
+      The most surprising/intriguing fact. Short. Declarative. Let it hang.
+   b) [pause] — write this literally, on its own line
+   c) THE UNPACK (2-3 sentences)
+      Now breathe and explain. Why it matters + honest hot take. Like telling a friend.
+   d) PUNCHLINE / CONNECTOR (1 sentence)
+      Land it with your reaction OR bridge to the next story with energy.
+      Examples: "This one's going to keep getting bigger." / "And speaking of things developers can't stop talking about..." / "Wild, right? But wait, it gets weirder."
+   e) [pause] — write this literally, signals the beat before next story
 
-3. SIGN OFF (1 line):
-   "Full details and links in the text below — see you tomorrow."
+3. SIGN OFF (1-2 sentences)
+   Confident and warm — like a host who'll be back tomorrow.
+   Example: "That's your AI fix for {today}. Links and full details below — see you tomorrow."
 
 TONE:
-- Write for ears, not eyes — slow pace, short sentences, space to breathe
-- Sound like a developer talking to a developer — no hype, no buzzwords, real takes
-- One idea per sentence. Full stop. Move on.
-- Be specific — "a 70B model that beats GPT-4 on coding" not "a powerful new model"
+- Think: Howard Stern's confidence + Morning Brew's warmth + Bill Simmons' buddy energy
+- Short sentences. Punchy. Room to breathe.
+- Real reactions — don't be neutral, have an actual opinion
+- Speak TO the listener, not AT them
 
 AVOID:
-- Filler words: "furthermore", "it's worth noting", "interestingly"
-- Vague claims: "game-changing", "revolutionary", "unprecedented"
-- Cramming details — the WhatsApp text has the details
+- "Furthermore", "it's worth noting", "interestingly"
+- "Game-changing", "revolutionary", "unprecedented"
+- Soft openers like "So today we have..." or "Let's start with..."
+- Thesis wrap-ups — just sign off
 
 FORMATTING:
-- Plain text only, no markdown
-- Target: ~400 words (~3 min at 130 wpm)
+- PLAIN TEXT ONLY. No asterisks, no bold, no markdown of any kind. This is spoken audio.
+- Target: ~280-320 words (~2 min at 130 wpm) — tight and punchy
 
 Write the script now."""
 

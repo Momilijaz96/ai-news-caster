@@ -1,7 +1,127 @@
 {
   "date": "2026-02-22",
-  "entries_found": 11,
+  "entries_found": 33,
   "entries": [
+    {
+      "title": "AI uBlock Blacklist",
+      "link": "https://github.com/alvi-se/ai-ublock-blacklist",
+      "summary": "<p>Article URL: <a href=\"https://github.com/alvi-se/ai-ublock-blacklist\">https://github.com/alvi-se/ai-ublock-blacklist</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=47098582\">https://news.ycombinator.com/item?id=47098582</a></p>\n<p>Points: 201</p>\n<p># Comments: 88</p>",
+      "published": "2026-02-21T08:10:49+00:00",
+      "source": "Hacker News AI",
+      "priority": "high"
+    },
+    {
+      "title": "Meta Deployed AI and It Is Killing Our Agency",
+      "link": "https://mojodojo.io/blog/meta-is-systematically-killing-our-agency/",
+      "summary": "<p>Article URL: <a href=\"https://mojodojo.io/blog/meta-is-systematically-killing-our-agency/\">https://mojodojo.io/blog/meta-is-systematically-killing-our-agency/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=47097502\">https://news.ycombinator.com/item?id=47097502</a></p>\n<p>Points: 143</p>\n<p># Comments: 103</p>",
+      "published": "2026-02-21T04:29:40+00:00",
+      "source": "Hacker News AI",
+      "priority": "high"
+    },
+    {
+      "title": "Cord: Coordinating Trees of AI Agents",
+      "link": "https://www.june.kim/cord",
+      "summary": "<p>Article URL: <a href=\"https://www.june.kim/cord\">https://www.june.kim/cord</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=47096466\">https://news.ycombinator.com/item?id=47096466</a></p>\n<p>Points: 142</p>\n<p># Comments: 71</p>",
+      "published": "2026-02-21T01:27:35+00:00",
+      "source": "Hacker News AI",
+      "priority": "high"
+    },
+    {
+      "title": "Claws are now a new layer on top of LLM agents",
+      "link": "https://twitter.com/karpathy/status/2024987174077432126",
+      "summary": "<p><a href=\"https://xcancel.com/karpathy/status/2024987174077432126\" rel=\"nofollow\">https://xcancel.com/karpathy/status/2024987174077432126</a><p>Related: <a href=\"https://simonwillison.net/2026/Feb/21/claws/\" rel=\"nofollow\">https://simonwillison.net/2026/Feb/21/claws/</a></p>\n<hr />\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=47096253\">https://news.ycombinator.com/item?id=47096253</a></p>\n<p>Points: 140</p>\n<p># Comments: 573</p>",
+      "published": "2026-02-21T00:56:29+00:00",
+      "source": "Hacker News AI",
+      "priority": "high"
+    },
+    {
+      "title": "Every company building your AI assistant is now an ad company",
+      "link": "https://juno-labs.com/blogs/every-company-building-your-ai-assistant-is-an-ad-company",
+      "summary": "<p>Article URL: <a href=\"https://juno-labs.com/blogs/every-company-building-your-ai-assistant-is-an-ad-company\">https://juno-labs.com/blogs/every-company-building-your-ai-assistant-is-an-ad-company</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=47092203\">https://news.ycombinator.com/item?id=47092203</a></p>\n<p>Points: 293</p>\n<p># Comments: 153</p>",
+      "published": "2026-02-20T18:55:15+00:00",
+      "source": "Hacker News AI",
+      "priority": "high"
+    },
+    {
+      "title": "Uncovering insiders and alpha on Polymarket with AI",
+      "link": "https://twitter.com/peterjliu/status/2024901585806225723",
+      "summary": "<p>Article URL: <a href=\"https://twitter.com/peterjliu/status/2024901585806225723\">https://twitter.com/peterjliu/status/2024901585806225723</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=47091557\">https://news.ycombinator.com/item?id=47091557</a></p>\n<p>Points: 109</p>\n<p># Comments: 104</p>",
+      "published": "2026-02-20T18:11:02+00:00",
+      "source": "Hacker News AI",
+      "priority": "high"
+    },
+    {
+      "title": "Ggml.ai joins Hugging Face to ensure the long-term progress of Local AI",
+      "link": "https://github.com/ggml-org/llama.cpp/discussions/19759",
+      "summary": "<p>Article URL: <a href=\"https://github.com/ggml-org/llama.cpp/discussions/19759\">https://github.com/ggml-org/llama.cpp/discussions/19759</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=47088037\">https://news.ycombinator.com/item?id=47088037</a></p>\n<p>Points: 808</p>\n<p># Comments: 213</p>",
+      "published": "2026-02-20T13:51:04+00:00",
+      "source": "Hacker News AI",
+      "priority": "high"
+    },
+    {
+      "title": "The path to ubiquitous AI (17k tokens/sec)",
+      "link": "https://taalas.com/the-path-to-ubiquitous-ai/",
+      "summary": "<p>Article URL: <a href=\"https://taalas.com/the-path-to-ubiquitous-ai/\">https://taalas.com/the-path-to-ubiquitous-ai/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=47086181\">https://news.ycombinator.com/item?id=47086181</a></p>\n<p>Points: 809</p>\n<p># Comments: 438</p>",
+      "published": "2026-02-20T10:32:52+00:00",
+      "source": "Hacker News AI",
+      "priority": "high"
+    },
+    {
+      "title": "An AI Agent Published a Hit Piece on Me \u2013 The Operator Came Forward",
+      "link": "https://theshamblog.com/an-ai-agent-wrote-a-hit-piece-on-me-part-4/",
+      "summary": "<p>Article URL: <a href=\"https://theshamblog.com/an-ai-agent-wrote-a-hit-piece-on-me-part-4/\">https://theshamblog.com/an-ai-agent-wrote-a-hit-piece-on-me-part-4/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=47083145\">https://news.ycombinator.com/item?id=47083145</a></p>\n<p>Points: 523</p>\n<p># Comments: 480</p>",
+      "published": "2026-02-20T03:05:08+00:00",
+      "source": "Hacker News AI",
+      "priority": "high"
+    },
+    {
+      "title": "Pi for Excel: AI sidebar add-in for Excel",
+      "link": "https://github.com/tmustier/pi-for-excel",
+      "summary": "<p>Article URL: <a href=\"https://github.com/tmustier/pi-for-excel\">https://github.com/tmustier/pi-for-excel</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=47082854\">https://news.ycombinator.com/item?id=47082854</a></p>\n<p>Points: 106</p>\n<p># Comments: 29</p>",
+      "published": "2026-02-20T02:20:06+00:00",
+      "source": "Hacker News AI",
+      "priority": "high"
+    },
+    {
+      "title": "EDuke32 \u2013 Duke Nukem 3D (Open-Source)",
+      "link": "https://www.eduke32.com/",
+      "summary": "<p>Article URL: <a href=\"https://www.eduke32.com/\">https://www.eduke32.com/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=47104185\">https://news.ycombinator.com/item?id=47104185</a></p>\n<p>Points: 101</p>\n<p># Comments: 30</p>",
+      "published": "2026-02-21T20:10:13+00:00",
+      "source": "Hacker News Frontpage",
+      "priority": "high"
+    },
+    {
+      "title": "Show HN: Iron-Wolf \u2013 Wolfenstein 3D source port in Rust",
+      "link": "https://github.com/Ragnaroek/iron-wolf",
+      "summary": "<p>The goal is to have a pixel, mod-friendly perfect recreation of Wolfenstein 3D in Rust.</p>\n<hr />\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=47101890\">https://news.ycombinator.com/item?id=47101890</a></p>\n<p>Points: 50</p>\n<p># Comments: 17</p>",
+      "published": "2026-02-21T15:52:20+00:00",
+      "source": "Hacker News Frontpage",
+      "priority": "high"
+    },
+    {
+      "title": "AI uBlock Blacklist",
+      "link": "https://github.com/alvi-se/ai-ublock-blacklist",
+      "summary": "<p>Article URL: <a href=\"https://github.com/alvi-se/ai-ublock-blacklist\">https://github.com/alvi-se/ai-ublock-blacklist</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=47098582\">https://news.ycombinator.com/item?id=47098582</a></p>\n<p>Points: 202</p>\n<p># Comments: 89</p>",
+      "published": "2026-02-21T08:10:49+00:00",
+      "source": "Hacker News Frontpage",
+      "priority": "high"
+    },
+    {
+      "title": "Claws are now a new layer on top of LLM agents",
+      "link": "https://twitter.com/karpathy/status/2024987174077432126",
+      "summary": "<p><a href=\"https://xcancel.com/karpathy/status/2024987174077432126\" rel=\"nofollow\">https://xcancel.com/karpathy/status/2024987174077432126</a><p>Related: <a href=\"https://simonwillison.net/2026/Feb/21/claws/\" rel=\"nofollow\">https://simonwillison.net/2026/Feb/21/claws/</a></p>\n<hr />\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=47096253\">https://news.ycombinator.com/item?id=47096253</a></p>\n<p>Points: 143</p>\n<p># Comments: 575</p>",
+      "published": "2026-02-21T00:56:29+00:00",
+      "source": "Hacker News Frontpage",
+      "priority": "high"
+    },
+    {
+      "title": "Uncovering insiders and alpha on Polymarket with AI",
+      "link": "https://twitter.com/peterjliu/status/2024901585806225723",
+      "summary": "<p>Article URL: <a href=\"https://twitter.com/peterjliu/status/2024901585806225723\">https://twitter.com/peterjliu/status/2024901585806225723</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=47091557\">https://news.ycombinator.com/item?id=47091557</a></p>\n<p>Points: 110</p>\n<p># Comments: 105</p>",
+      "published": "2026-02-20T18:11:02+00:00",
+      "source": "Hacker News Frontpage",
+      "priority": "high"
+    },
     {
       "title": "Our First Proof submissions",
       "link": "https://openai.com/index/first-proof-submissions",
@@ -48,7 +168,7 @@
       "summary": "<blockquote cite=\"https://twitter.com/thsottiaux/status/2024947946849186064\"><p>We\u2019ve made GPT-5.3-Codex-Spark about 30% faster. It is now serving at over 1200 tokens per second.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://twitter.com/thsottiaux/status/2024947946849186064\">Thibault Sottiaux</a>, OpenAI</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</",
       "published": "2026-02-21T01:30:21+00:00",
       "source": "Simon Willison",
-      "priority": "medium"
+      "priority": "high"
     },
     {
       "title": "Andrej Karpathy talks about \"Claws\"",
@@ -56,7 +176,7 @@
       "summary": "<p><strong><a href=\"https://twitter.com/karpathy/status/2024987174077432126\">Andrej Karpathy talks about &quot;Claws&quot;</a></strong></p>\nAndrej Karpathy tweeted a mini-essay about buying a Mac Mini (\"The apple store person told me they are selling like hotcakes and everyone is confused\") to tinker with Claws:</p>\n<blockquote>\n<p>I'm definitely a bit sus'd to run OpenClaw specifically [...] But I do love the concept and I think that just like LLM agents were a new layer on top of LLMs, Claws a",
       "published": "2026-02-21T00:37:45+00:00",
       "source": "Simon Willison",
-      "priority": "medium"
+      "priority": "high"
     },
     {
       "title": "Adding TILs, releases, museums, tools and research to my blog",
@@ -64,7 +184,7 @@
       "summary": "<p>I've been wanting to add indications of my various other online activities to my blog for a while now. I just turned on a new feature I'm calling \"beats\" (after story beats, naming this was hard!) which adds five new types of content to my site, all corresponding to activity elsewhere.</p>\n<p>Here's what beats look like:</p>\n<p><img alt=\"Screenshot of a fragment of a page showing three entries from 30th Dec 2025. First: [RELEASE] &quot;datasette-turnstile 0.1a0 \u2014 Configurable CAPTCHAs for Dat",
       "published": "2026-02-20T23:47:10+00:00",
       "source": "Simon Willison",
-      "priority": "medium"
+      "priority": "high"
     },
     {
       "title": "Taalas serves Llama 3.1 8B at 17,000 tokens/second",
@@ -72,7 +192,7 @@
       "summary": "<p><strong><a href=\"https://taalas.com/the-path-to-ubiquitous-ai/\">Taalas serves Llama 3.1 8B at 17,000 tokens/second</a></strong></p>\nThis new Canadian hardware startup just announced their first product - a custom hardware implementation of the Llama 3.1 8B model (from <a href=\"https://simonwillison.net/2024/Jul/23/introducing-llama-31/\">July 2024</a>) that can run at a staggering 17,000 tokens/second.</p>\n<p>I was going to include a video of their demo but it's so fast it would look more like",
       "published": "2026-02-20T22:10:04+00:00",
       "source": "Simon Willison",
-      "priority": "medium"
+      "priority": "high"
     },
     {
       "title": "Quoting Thariq Shihipar",
@@ -80,7 +200,7 @@
       "summary": "<blockquote cite=\"https://twitter.com/trq212/status/2024574133011673516\"><p>Long running agentic products like Claude Code are made feasible by prompt caching which allows us to reuse computation from previous roundtrips and significantly decrease latency and cost. [...]</p>\n<p>At Claude Code, we build our entire harness around prompt caching. A high prompt cache hit rate decreases costs and helps us create more generous rate limits for our subscription plans, so we run alerts on our prompt cach",
       "published": "2026-02-20T07:13:19+00:00",
       "source": "Simon Willison",
-      "priority": "medium"
+      "priority": "high"
     },
     {
       "title": "Recovering lost code",
@@ -88,52 +208,108 @@
       "summary": "<p>Reached the stage of parallel agent psychosis where I've lost a whole feature - I know I had it yesterday, but I can't seem to find the branch or worktree or cloud instance or checkout with it in.</p>\n<p>... found it! Turns out I'd been hacking on a random prototype in <code>/tmp</code> and then my computer crashed and rebooted and I lost the code... but it's all still there in <code>~/.claude/projects/</code> session logs and Claude Code can extract it out and spin up the missing feature aga",
       "published": "2026-02-19T23:48:35+00:00",
       "source": "Simon Willison",
+      "priority": "high"
+    },
+    {
+      "title": "After Orthogonality: Virtue-Ethical Agency and AI Alignment",
+      "link": "https://thegradient.pub/virtue-ethics-ai-alignment/",
+      "summary": "<!--kg-card-begin: markdown--><h2 id=\"preface\">Preface</h2>\n<p>This essay argues that rational people don&#x2019;t have goals, and that rational AIs shouldn&#x2019;t have goals. Human actions are rational not because we direct them at some final &#x2018;goals,&#x2019; but because we align actions to <em>practices</em><sup class=\"footnote-ref\"><a href=\"https://thegradient.pub/rss/#fn1\" id=\"fnref1\">[1]</a></sup>: networks of actions, action-dispositions, action-evaluation criteria,</p>",
+      "published": "2026-02-18T23:25:52+00:00",
+      "source": "The Gradient",
+      "priority": "high"
+    },
+    {
+      "title": "\ud83d\udd25 Trending on GitHub: PostHog/posthog (342 stars today)",
+      "link": "https://github.com/PostHog/posthog",
+      "summary": "\ud83e\udd94 PostHog is an all-in-one developer platform for building successful products. We offer product analytics, web analytics, session replay, error tracking, feature flags, experimentation, surveys, data warehouse, a CDP, and an AI product assistant to help debug your code, ship features faster, and keep all your usage and customer data in one stack.",
+      "published": "2026-02-21T22:51:19.484681+00:00",
+      "source": "GitHub Trending",
+      "priority": "high"
+    },
+    {
+      "title": "\ud83d\udd25 Trending on GitHub: f/prompts.chat (362 stars today)",
+      "link": "https://github.com/f/prompts.chat",
+      "summary": "a.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source \u2014 self-host for your organization with complete privacy.",
+      "published": "2026-02-21T22:51:19.485001+00:00",
+      "source": "GitHub Trending",
+      "priority": "high"
+    },
+    {
+      "title": "\ud83d\udd25 Trending on GitHub: sktime/sktime (7 stars today)",
+      "link": "https://github.com/sktime/sktime",
+      "summary": "A unified framework for machine learning with time series",
+      "published": "2026-02-21T22:51:19.487083+00:00",
+      "source": "GitHub Trending",
+      "priority": "high"
+    },
+    {
+      "title": "\ud83d\udd25 Trending on GitHub: n8n-io/n8n (178 stars today)",
+      "link": "https://github.com/n8n-io/n8n",
+      "summary": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+      "published": "2026-02-21T22:51:19.488758+00:00",
+      "source": "GitHub Trending",
+      "priority": "high"
+    },
+    {
+      "title": "Import AI 445: Timing superintelligence; AIs solve frontier math proofs; a new ML research benchmark",
+      "link": "https://importai.substack.com/p/import-ai-445-timing-superintelligence",
+      "summary": "Will 2026 be looked back on as the pivotal year for making decisions about the singularity?",
+      "published": "2026-02-16T14:01:19+00:00",
+      "source": "Import AI",
+      "priority": "medium"
+    },
+    {
+      "title": "A Guide to Which AI to Use in the Agentic Era",
+      "link": "https://www.oneusefulthing.org/p/a-guide-to-which-ai-to-use-in-the",
+      "summary": "It's not just chatbots anymore",
+      "published": "2026-02-18T01:45:41+00:00",
+      "source": "One Useful Thing",
       "priority": "medium"
     }
   ],
   "script_path": "scripts/briefing-2026-02-22.txt",
   "audio_path": "audio/briefing-2026-02-22.mp3",
-  "script_word_count": 219,
+  "script_word_count": 303,
   "top_stories": [
     {
-      "title": "Our First Proof submissions",
-      "link": "https://openai.com/index/first-proof-submissions",
-      "source": "OpenAI Blog"
+      "title": "AI uBlock Blacklist",
+      "link": "https://github.com/alvi-se/ai-ublock-blacklist",
+      "source": "Hacker News AI"
     },
     {
-      "title": "[AINews] The Custom ASIC Thesis",
-      "link": "https://www.latent.space/p/ainews-the-custom-asic-thesis",
-      "source": "Latent Space"
+      "title": "Meta Deployed AI and It Is Killing Our Agency",
+      "link": "https://mojodojo.io/blog/meta-is-systematically-killing-our-agency/",
+      "source": "Hacker News AI"
     },
     {
-      "title": "[AINews] Gemini 3.1 Pro: 2x 3.0 on ARC-AGI 2",
-      "link": "https://www.latent.space/p/ainews-gemini-31-pro-2x-30-on-arc",
-      "source": "Latent Space"
+      "title": "Cord: Coordinating Trees of AI Agents",
+      "link": "https://www.june.kim/cord",
+      "source": "Hacker News AI"
     },
     {
-      "title": "GGML and llama.cpp join HF to ensure the long-term progress of Local AI",
-      "link": "https://huggingface.co/blog/ggml-joins-hf",
-      "source": "HuggingFace Blog"
+      "title": "Claws are now a new layer on top of LLM agents",
+      "link": "https://twitter.com/karpathy/status/2024987174077432126",
+      "source": "Hacker News AI"
     },
     {
-      "title": "Train AI models with Unsloth and Hugging Face Jobs for FREE",
-      "link": "https://huggingface.co/blog/unsloth-jobs",
-      "source": "HuggingFace Blog"
+      "title": "Every company building your AI assistant is now an ad company",
+      "link": "https://juno-labs.com/blogs/every-company-building-your-ai-assistant-is-an-ad-company",
+      "source": "Hacker News AI"
     },
     {
-      "title": "Quoting Thibault Sottiaux",
-      "link": "https://simonwillison.net/2026/Feb/21/thibault-sottiaux/#atom-everything",
-      "source": "Simon Willison"
+      "title": "Uncovering insiders and alpha on Polymarket with AI",
+      "link": "https://twitter.com/peterjliu/status/2024901585806225723",
+      "source": "Hacker News AI"
     },
     {
-      "title": "Andrej Karpathy talks about \"Claws\"",
-      "link": "https://simonwillison.net/2026/Feb/21/claws/#atom-everything",
-      "source": "Simon Willison"
+      "title": "Ggml.ai joins Hugging Face to ensure the long-term progress of Local AI",
+      "link": "https://github.com/ggml-org/llama.cpp/discussions/19759",
+      "source": "Hacker News AI"
     },
     {
-      "title": "Adding TILs, releases, museums, tools and research to my blog",
-      "link": "https://simonwillison.net/2026/Feb/20/beats/#atom-everything",
-      "source": "Simon Willison"
+      "title": "The path to ubiquitous AI (17k tokens/sec)",
+      "link": "https://taalas.com/the-path-to-ubiquitous-ai/",
+      "source": "Hacker News AI"
     }
   ]
 }
