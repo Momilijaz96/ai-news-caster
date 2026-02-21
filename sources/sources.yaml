@@ -36,21 +36,39 @@ rss_feeds:
     url: "https://simonwillison.net/atom/everything/"
     priority: high
 
+  - name: "Ahead of AI"
+    url: "https://magazine.sebastianraschka.com/feed"
+    priority: high
+    hours_back: 168  # weekly newsletter — look back 7 days
+
+  - name: "The Gradient"
+    url: "https://thegradient.pub/rss/"
+    priority: high
+    hours_back: 168
+
   - name: "Import AI"
     url: "https://importai.substack.com/feed"
     priority: medium
+    hours_back: 168
 
   - name: "One Useful Thing"
     url: "https://oneusefulthing.substack.com/feed"
     priority: medium
+    hours_back: 168
 
   - name: "Ben's Bites"
     url: "https://bens.substack.com/feed"
     priority: medium
+    hours_back: 168
 
   - name: "NVIDIA Developer Blog"
     url: "https://blogs.nvidia.com/feed/"
     priority: medium
+
+  - name: "Elvis Saravia (DAIR.AI)"
+    url: "https://elvissaravia.substack.com/feed"
+    priority: medium
+    hours_back: 168
 
 # Filtering
 keywords_boost:
