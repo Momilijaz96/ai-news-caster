@@ -3,7 +3,7 @@
 # Output settings
 output:
   audio_format: "mp3"
-  target_duration_minutes: 12  # Aim for 10-15 min
+  target_duration_minutes: 5  # ~750 words, fits ElevenLabs Starter quota
   voice: "en-US-JennyNeural"  # edge-tts voice
   
 # Delivery
@@ -33,5 +33,6 @@ llm:
 
 # TTS settings
 tts:
-  provider: "edge-tts"  # free, no API key required
-  voice: "en-US-JennyNeural"
+  provider: "elevenlabs"
+  voice_id: "cgSgspJ2msm6clMCkdW9"  # Jessica — casual, friendly female
+  model: "eleven_turbo_v2_5"

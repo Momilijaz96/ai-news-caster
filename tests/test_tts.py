@@ -1,52 +1,63 @@
-"""Tests for src/tts.py using edge-tts."""
+"""Tests for src/tts.py using ElevenLabs."""
 
 from pathlib import Path
-from unittest.mock import AsyncMock, MagicMock, patch
-
-from src.tts import generate_audio
+from unittest.mock import MagicMock, patch
 
 
-def test_generate_audio_calls_communicate_with_correct_voice(tmp_path):
-    """generate_audio should call edge_tts.Communicate with en-US-JennyNeural."""
+def test_generate_audio_calls_elevenlabs_with_correct_params(tmp_path):
+    """generate_audio should call ElevenLabs TTS with correct voice and model."""
     output_path = str(tmp_path / "output.mp3")
     script = "Hello, this is a test briefing."
 
-    mock_communicate_instance = MagicMock()
-    mock_communicate_instance.save = AsyncMock()
+    mock_audio_chunks = [b"chunk1", b"chunk2"]
 
-    with patch("src.tts.edge_tts.Communicate", return_value=mock_communicate_instance) as mock_communicate:
+    with patch("src.tts.ElevenLabs") as mock_client_cls, \
+         patch.dict("os.environ", {"ELEVENLABS_API_KEY": "test-key"}):
+        mock_client = MagicMock()
+        mock_client_cls.return_value = mock_client
+        mock_client.text_to_speech.convert.return_value = iter(mock_audio_chunks)
+
+        from src.tts import generate_audio, VOICE_ID, MODEL_ID
         result = generate_audio(script, output_path)
 
-    mock_communicate.assert_called_once_with(script, "en-US-JennyNeural")
-    mock_communicate_instance.save.assert_awaited_once_with(output_path)
+    mock_client.text_to_speech.convert.assert_called_once_with(
+        text=script,
+        voice_id=VOICE_ID,
+        model_id=MODEL_ID,
+        output_format="mp3_44100_128",
+    )
     assert result == output_path
+    assert Path(output_path).read_bytes() == b"chunk1chunk2"
 
 
 def test_generate_audio_creates_parent_directory(tmp_path):
     """generate_audio should create the parent directory if it does not exist."""
     output_path = str(tmp_path / "nested" / "dir" / "output.mp3")
-    script = "Test script."
 
-    mock_communicate_instance = MagicMock()
-    mock_communicate_instance.save = AsyncMock()
+    with patch("src.tts.ElevenLabs") as mock_client_cls, \
+         patch.dict("os.environ", {"ELEVENLABS_API_KEY": "test-key"}):
+        mock_client = MagicMock()
+        mock_client_cls.return_value = mock_client
+        mock_client.text_to_speech.convert.return_value = iter([b"audio"])
 
-    with patch("src.tts.edge_tts.Communicate", return_value=mock_communicate_instance):
-        generate_audio(script, output_path)
+        from src.tts import generate_audio
+        generate_audio("Test.", output_path)
 
     assert Path(output_path).parent.exists()
 
 
-def test_generate_audio_no_openai_import():
-    """src.tts should not import openai."""
-    import sys
+def test_generate_audio_raises_without_api_key(tmp_path):
+    """generate_audio should raise ValueError if ELEVENLABS_API_KEY is not set."""
+    import os
+    env = {k: v for k, v in os.environ.items() if k != "ELEVENLABS_API_KEY"}
 
-    # Remove cached module to force fresh inspection
-    for mod in list(sys.modules.keys()):
-        if mod == "src.tts":
-            del sys.modules[mod]
-
-    import src.tts as tts_module
-    import inspect
-    source = inspect.getsource(tts_module)
-    assert "import openai" not in source
-    assert "openai" not in source
+    with patch.dict("os.environ", env, clear=True):
+        import importlib
+        import src.tts
+        importlib.reload(src.tts)
+        from src.tts import generate_audio
+        try:
+            generate_audio("Test.", str(tmp_path / "out.mp3"))
+            assert False, "Should have raised ValueError"
+        except ValueError as e:
+            assert "ELEVENLABS_API_KEY" in str(e)
