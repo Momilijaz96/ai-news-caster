@@ -10,15 +10,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from src.aggregator import aggregate
-from src.scriptwriter import write_script
+from src.scriptwriter import write_script, extract_story_list, load_config
 from src.tts import generate_audio
-
-
-def config_max_stories(config_path: str = "config/config.yaml") -> int:
-    import yaml
-    with open(config_path) as f:
-        cfg = yaml.safe_load(f)
-    return cfg.get("style", {}).get("max_stories", 8)
 
 
 def run():
@@ -65,8 +58,9 @@ def run():
     print(f"  Archive saved: {archive_path}")
 
     # Save summary for WhatsApp delivery
-    from src.scriptwriter import extract_story_list
-    summary = extract_story_list(entries, max_stories=config_max_stories())
+    cfg = load_config()
+    max_stories = cfg.get("style", {}).get("max_stories", 8)
+    summary = extract_story_list(entries, max_stories=max_stories)
     summary_path = f"archive/{today}-summary.json"
     with open(summary_path, "w") as f:
         json.dump(summary, f, indent=2)
