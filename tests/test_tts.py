@@ -1,5 +1,6 @@
 """Tests for src/tts.py using edge-tts."""
 
+from pathlib import Path
 from unittest.mock import AsyncMock, MagicMock, patch
 
 from src.tts import generate_audio
@@ -32,7 +33,6 @@ def test_generate_audio_creates_parent_directory(tmp_path):
     with patch("src.tts.edge_tts.Communicate", return_value=mock_communicate_instance):
         generate_audio(script, output_path)
 
-    from pathlib import Path
     assert Path(output_path).parent.exists()
 
 
