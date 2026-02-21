@@ -1,0 +1,53 @@
+# AI News Sources Configuration
+# Add RSS feeds, Twitter/X accounts, newsletters to track
+
+rss_feeds:
+  - name: "The Batch (DeepLearning.AI)"
+    url: "https://www.deeplearning.ai/the-batch/feed/"
+    priority: high
+  
+  - name: "MIT Tech Review - AI"
+    url: "https://www.technologyreview.com/topic/artificial-intelligence/feed"
+    priority: medium
+
+  - name: "OpenAI Blog"
+    url: "https://openai.com/blog/rss.xml"
+    priority: high
+
+  - name: "Anthropic News"
+    url: "https://www.anthropic.com/news/rss.xml"
+    priority: high
+
+twitter_lists:
+  # Add Twitter/X list IDs to monitor
+  - name: "AI Researchers"
+    list_id: ""  # TODO: Add list ID
+
+twitter_accounts:
+  # Key accounts to check
+  - "@AnthropicAI"
+  - "@OpenAI"
+  - "@GoogleDeepMind"
+  - "@ylecun"
+  - "@kaboroevsky"
+  - "@EMostaque"
+
+newsletters:
+  # Newsletters (manual or via email parsing)
+  - name: "Import AI"
+    source: "email"
+  - name: "The Rundown AI"
+    source: "email"
+
+# Filtering
+keywords_boost:
+  - "breakthrough"
+  - "release"
+  - "launch"
+  - "open source"
+  - "safety"
+  - "regulation"
+
+keywords_skip:
+  - "sponsored"
+  - "advertisement"

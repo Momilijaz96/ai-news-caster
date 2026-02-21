@@ -1,0 +1,38 @@
+# AI News Caster Configuration
+
+# Output settings
+output:
+  audio_format: "mp3"
+  target_duration_minutes: 12  # Aim for 10-15 min
+  voice: "nova"  # OpenAI voice or ElevenLabs voice ID
+  
+# Delivery
+delivery:
+  channels:
+    - type: "whatsapp"
+      enabled: true
+    - type: "telegram"
+      enabled: false
+  
+  schedule:
+    timezone: "Asia/Dubai"
+    time: "08:00"  # Morning briefing
+
+# Content style
+style:
+  tone: "frank"  # frank, professional, casual
+  language: "simple"  # simple, technical
+  include_opinions: true
+  max_stories: 8
+
+# LLM settings
+llm:
+  provider: "anthropic"  # anthropic, openai
+  model: "claude-sonnet-4-20250514"
+  max_tokens: 4000
+
+# TTS settings  
+tts:
+  provider: "openai"  # openai, elevenlabs
+  voice: "nova"
+  speed: 1.0
