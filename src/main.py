@@ -12,6 +12,7 @@ load_dotenv()
 from src.aggregator import aggregate
 from src.scriptwriter import write_script, extract_story_list, load_config
 from src.tts import generate_audio
+from src.deliver import deliver_whatsapp
 
 
 def run():
@@ -65,6 +66,14 @@ def run():
     with open(summary_path, "w") as f:
         json.dump(summary, f, indent=2)
     print(f"  Summary saved: {summary_path}")
+
+    # Step 5: Deliver via WhatsApp
+    print(f"\n[4/4] Delivering via WhatsApp...")
+    try:
+        deliver_whatsapp(audio_path, summary_path)
+    except Exception as e:
+        print(f"  Warning: WhatsApp delivery failed: {e}")
+        print("  Briefing saved locally — deliver manually if needed.")
 
     print(f"\n=== Done! ===")
     print(f"  Script: {script_path}")
