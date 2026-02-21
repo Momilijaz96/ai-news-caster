@@ -21,38 +21,44 @@ def _entries_text(entries: list[dict], max_stories: int) -> str:
 def build_audio_prompt(entries: list[dict], config: dict) -> str:
     max_stories = config.get("style", {}).get("max_stories", 8)
 
-    return f"""You're writing a punchy 3-5 minute audio teaser for a daily AI news briefing.
+    return f"""You're writing a 3-minute spoken audio briefing. It will be listened to, not read.
 
-Think of it like a movie trailer for today's AI news — hook the listener, tease the highlights, make them curious. NOT a full explainer.
-
-Pick the top 5 most interesting stories from the entries below. Then write the spoken audio script.
+Pick the top 3 stories from the entries below. Just 3 — quality over quantity.
 
 NEWS ENTRIES:
 {_entries_text(entries, max_stories)}
 
 STRUCTURE:
 
-1. COLD OPEN (1-2 sentences):
-   Start with the single most interesting thing happening today. No intro, no "hey welcome back" — just drop straight into the news like a hook.
-   Example: "Someone just open-sourced a model that's giving GPT-4 a run for its money. That's the headline today."
+1. COLD OPEN (1 sentence):
+   The single most interesting thing today. Drop straight in. No greeting.
+   Example: "Someone just open-sourced a model that's giving GPT-4 a run for its money."
 
-2. THE HIGHLIGHTS (one punchy line per story, 5 stories):
-   Rapid-fire. Each story gets ONE sentence — just enough to intrigue, not explain.
-   No transitions needed, just boom boom boom.
+2. THREE STORIES (one per story):
+   For each story:
+   - One sentence: what happened
+   - One sentence: why it's interesting
+   - One sentence: your honest take
+   That's it. 3 sentences per story. Hard limit.
 
 3. SIGN OFF (1 line):
-   "Full details and links in the description — catch you tomorrow."
+   "Details and links are in the text below — see you tomorrow."
 
 TONE:
-- Energetic, punchy, like a sports highlight reel not a lecture
-- Short sentences. Fragments are fine. Punch > completeness.
-- Opinions welcome — "this one's big", "honestly not sure it matters yet", "this changes things"
-- NO explaining, NO deep dives — save that for the WhatsApp text
+- Slow down. Leave space. This is audio, not text.
+- Write how you'd actually say it out loud to a friend — not how you'd write it
+- Short sentences. One idea per sentence. Full stop. New thought.
+- Conversational opinions — "this is actually big", "not sure it matters yet", "keep an eye on this one"
+
+WHAT TO AVOID:
+- No "furthermore", "additionally", "it's worth noting" — cut all filler
+- No lists, no "first... second... third..."
+- No more than 10 words per sentence ideally
+- Don't cram in details — details live in the WhatsApp text
 
 FORMATTING:
-- No markdown, no headers, no bullet points — spoken script only
-- No stage directions or [brackets]
-- Target: ~500-600 words MAX (~3-4 min at 150 wpm)
+- Plain text, no markdown, no headers
+- Target: ~400 words (~3 min at 130 wpm — spoken pace is slower than reading)
 
 Write the script now."""
 
