@@ -2,6 +2,7 @@
 
 import json
 import os
+import shutil
 import subprocess
 from pathlib import Path
 
@@ -17,13 +18,20 @@ def deliver_whatsapp(audio_path: str, summary_path: str) -> None:
     if not target:
         raise ValueError("WHATSAPP_TARGET_NUMBER env var not set")
 
+    # openclaw only allows media from its state dir or system tmp.
+    # Copy the MP3 to ~/.openclaw/media/ before sending.
+    media_dir = Path.home() / ".openclaw" / "media"
+    media_dir.mkdir(parents=True, exist_ok=True)
+    staged = media_dir / Path(audio_path).name
+    shutil.copy2(audio_path, staged)
+
     # 1. Send MP3 as voice note
     print(f"  Sending voice note to {target}...")
     subprocess.run([
         "openclaw", "message", "send",
         "--channel", "whatsapp",
         "--target", target,
-        "--media", audio_path,
+        "--media", str(staged),
         "--message", "🎙️ Your AI news briefing is ready",
     ], check=True)
     print("  Voice note sent.")
