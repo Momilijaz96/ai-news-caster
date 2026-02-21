@@ -66,7 +66,10 @@ def write_script(entries: list[dict], config_path: str = "config/config.yaml") -
 
 
 def extract_story_list(entries: list[dict], max_stories: int = 8) -> list[dict]:
-    """Return top N entries as a structured list for summary generation."""
+    """Return top N entries as a structured list for summary generation.
+
+    Each returned dict contains keys: 'title', 'link', 'source'.
+    """
     return [
         {"title": e["title"], "link": e["link"], "source": e["source"]}
         for e in entries[:max_stories]

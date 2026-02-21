@@ -8,7 +8,7 @@ def test_extract_story_list_returns_list():
     ]
     result = extract_story_list(entries, max_stories=8)
     assert isinstance(result, list)
-    assert len(result) <= 8
+    assert len(result) == 2
     assert all("title" in s and "link" in s and "source" in s for s in result)
 
 
@@ -18,4 +18,9 @@ def test_extract_story_list_respects_max():
         for i in range(20)
     ]
     result = extract_story_list(entries, max_stories=5)
-    assert len(result) <= 5
+    assert len(result) == 5
+
+
+def test_extract_story_list_empty_entries():
+    result = extract_story_list([], max_stories=8)
+    assert result == []
