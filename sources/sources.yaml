@@ -1,6 +1,15 @@
-# AI News Sources — dev tools + research focus
+# AI News Sources — trending signals + lab blogs + practitioner voices
 
 rss_feeds:
+  # 🔥 Trending / community-ranked (highest signal)
+  - name: "Hacker News AI"
+    url: "https://hnrss.org/newest?q=AI+OR+LLM+OR+Claude+OR+GPT+OR+agent+OR+model&points=100"
+    priority: high
+
+  - name: "Hacker News Frontpage"
+    url: "https://hnrss.org/frontpage?q=AI+OR+LLM+OR+model+OR+open+source&points=50"
+    priority: high
+
   # Lab blogs — model releases, research, APIs
   - name: "OpenAI Blog"
     url: "https://openai.com/blog/rss.xml"
@@ -14,11 +23,7 @@ rss_feeds:
     url: "https://www.deepmind.com/blog/rss.xml"
     priority: high
 
-  - name: "Google Research"
-    url: "https://research.google/blog/rss/"
-    priority: high
-
-  # Community & practitioner voices
+  # Practitioner voices
   - name: "Latent Space"
     url: "https://www.latent.space/feed"
     priority: high
@@ -27,48 +32,45 @@ rss_feeds:
     url: "https://huggingface.co/blog/feed.xml"
     priority: high
 
+  - name: "Simon Willison"
+    url: "https://simonwillison.net/atom/everything/"
+    priority: high
+
   - name: "Import AI"
     url: "https://importai.substack.com/feed"
-    priority: high
+    priority: medium
 
   - name: "One Useful Thing"
     url: "https://oneusefulthing.substack.com/feed"
-    priority: high
-
-  # Tools & infra
-  - name: "NVIDIA Developer Blog"
-    url: "https://blogs.nvidia.com/feed/"
-    priority: medium
-
-  - name: "Simon Willison"
-    url: "https://simonwillison.net/atom/everything/"
     priority: medium
 
   - name: "Ben's Bites"
     url: "https://bens.substack.com/feed"
     priority: medium
 
+  - name: "NVIDIA Developer Blog"
+    url: "https://blogs.nvidia.com/feed/"
+    priority: medium
+
 # Filtering
 keywords_boost:
   - "model"
   - "release"
-  - "paper"
-  - "benchmark"
   - "open source"
   - "API"
-  - "tool"
-  - "framework"
   - "agent"
   - "launch"
-  - "research"
-  - "training"
-  - "inference"
+  - "paper"
+  - "benchmark"
+  - "tool"
+  - "framework"
+  - "trending"
+  - "viral"
 
 keywords_skip:
   - "sponsored"
   - "advertisement"
-  - "regulation"
-  - "policy"
   - "lawsuit"
   - "funding round"
   - "acquisition"
+  - "IPO"

@@ -93,5 +93,47 @@
   ],
   "script_path": "scripts/briefing-2026-02-22.txt",
   "audio_path": "audio/briefing-2026-02-22.mp3",
-  "script_word_count": 720
+  "script_word_count": 219,
+  "top_stories": [
+    {
+      "title": "Our First Proof submissions",
+      "link": "https://openai.com/index/first-proof-submissions",
+      "source": "OpenAI Blog"
+    },
+    {
+      "title": "[AINews] The Custom ASIC Thesis",
+      "link": "https://www.latent.space/p/ainews-the-custom-asic-thesis",
+      "source": "Latent Space"
+    },
+    {
+      "title": "[AINews] Gemini 3.1 Pro: 2x 3.0 on ARC-AGI 2",
+      "link": "https://www.latent.space/p/ainews-gemini-31-pro-2x-30-on-arc",
+      "source": "Latent Space"
+    },
+    {
+      "title": "GGML and llama.cpp join HF to ensure the long-term progress of Local AI",
+      "link": "https://huggingface.co/blog/ggml-joins-hf",
+      "source": "HuggingFace Blog"
+    },
+    {
+      "title": "Train AI models with Unsloth and Hugging Face Jobs for FREE",
+      "link": "https://huggingface.co/blog/unsloth-jobs",
+      "source": "HuggingFace Blog"
+    },
+    {
+      "title": "Quoting Thibault Sottiaux",
+      "link": "https://simonwillison.net/2026/Feb/21/thibault-sottiaux/#atom-everything",
+      "source": "Simon Willison"
+    },
+    {
+      "title": "Andrej Karpathy talks about \"Claws\"",
+      "link": "https://simonwillison.net/2026/Feb/21/claws/#atom-everything",
+      "source": "Simon Willison"
+    },
+    {
+      "title": "Adding TILs, releases, museums, tools and research to my blog",
+      "link": "https://simonwillison.net/2026/Feb/20/beats/#atom-everything",
+      "source": "Simon Willison"
+    }
+  ]
 }

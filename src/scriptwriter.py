@@ -21,9 +21,11 @@ def _entries_text(entries: list[dict], max_stories: int) -> str:
 def build_audio_prompt(entries: list[dict], config: dict) -> str:
     max_stories = config.get("style", {}).get("max_stories", 8)
 
-    return f"""You're writing a 3-minute spoken audio briefing. It will be listened to, not read.
+    return f"""You're a senior ML engineer writing a 3-minute spoken audio briefing for fellow developers.
 
-Pick the top 3 stories from the entries below. Just 3 — quality over quantity.
+Your job: pick the 3 stories that are actually causing a stir right now. Things people are sharing, debating, or excited about. Trending GitHub repos, viral model releases, hot HN threads, things that make developers stop and go "wait, what?"
+
+Skip anything boring, incremental, or corporate PR. If a story wouldn't make a developer stop scrolling, don't pick it.
 
 NEWS ENTRIES:
 {_entries_text(entries, max_stories)}
@@ -31,34 +33,32 @@ NEWS ENTRIES:
 STRUCTURE:
 
 1. COLD OPEN (1 sentence):
-   The single most interesting thing today. Drop straight in. No greeting.
-   Example: "Someone just open-sourced a model that's giving GPT-4 a run for its money."
+   Lead with the most exciting thing. Drop straight in — no greeting, no "hey".
+   Example: "Someone just open-sourced a model that's running circles around GPT-4. That's today's headline."
 
-2. THREE STORIES (one per story):
-   For each story:
-   - One sentence: what happened
-   - One sentence: why it's interesting
-   - One sentence: your honest take
-   That's it. 3 sentences per story. Hard limit.
+2. THREE STORIES:
+   For each story — exactly 3 sentences:
+   - What happened (1 sentence, concrete and specific)
+   - Why developers should care (1 sentence)
+   - Your honest reaction (1 sentence — excited, skeptical, impressed, whatever's real)
 
 3. SIGN OFF (1 line):
-   "Details and links are in the text below — see you tomorrow."
+   "Full details and links in the text below — see you tomorrow."
 
 TONE:
-- Slow down. Leave space. This is audio, not text.
-- Write how you'd actually say it out loud to a friend — not how you'd write it
-- Short sentences. One idea per sentence. Full stop. New thought.
-- Conversational opinions — "this is actually big", "not sure it matters yet", "keep an eye on this one"
+- Write for ears, not eyes — slow pace, short sentences, space to breathe
+- Sound like a developer talking to a developer — no hype, no buzzwords, real takes
+- One idea per sentence. Full stop. Move on.
+- Be specific — "a 70B model that beats GPT-4 on coding" not "a powerful new model"
 
-WHAT TO AVOID:
-- No "furthermore", "additionally", "it's worth noting" — cut all filler
-- No lists, no "first... second... third..."
-- No more than 10 words per sentence ideally
-- Don't cram in details — details live in the WhatsApp text
+AVOID:
+- Filler words: "furthermore", "it's worth noting", "interestingly"
+- Vague claims: "game-changing", "revolutionary", "unprecedented"
+- Cramming details — the WhatsApp text has the details
 
 FORMATTING:
-- Plain text, no markdown, no headers
-- Target: ~400 words (~3 min at 130 wpm — spoken pace is slower than reading)
+- Plain text only, no markdown
+- Target: ~400 words (~3 min at 130 wpm)
 
 Write the script now."""
 
@@ -70,7 +70,7 @@ def build_whatsapp_prompt(entries: list[dict], config: dict) -> str:
 
 This is the "full details" companion to a short audio teaser — readers want substance here.
 
-Pick the top 5 stories from the entries below.
+Pick the top 5 most interesting/trending stories from the entries below. Prioritize things that are actually causing buzz — viral repos, hot model releases, trending HN threads — over dry corporate announcements.
 
 NEWS ENTRIES:
 {_entries_text(entries, max_stories)}

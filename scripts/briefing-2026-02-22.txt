@@ -1,25 +1,11 @@
-Hey, it's February 21st — here's what's happening in AI today.
+Someone just served Llama 3.1 at seventeen thousand tokens per second using custom silicon. That's not a typo — seventeen thousand.
 
-Three things today — first, Google just dropped Gemini 3.1 Pro and it's crushing ARC-AGI benchmarks at twice the performance of the previous version. Second, a Canadian startup called Taalas is serving Llama 3.1 8B at a ridiculous 17,000 tokens per second using custom silicon. Third, Hugging Face just acquired GGML and llama.cpp to keep local AI development moving forward. Let's get into it.
+Canadian startup Taalas just dropped their custom ASIC chip that makes current AI inference look glacially slow. Meanwhile OpenAI's quietly flexing too — their new GPT-5.3-Codex-Spark is now cranking out twelve hundred tokens per second, thirty percent faster than before. The speed wars are heating up and honestly, this changes everything for real-time AI.
 
-Alright, starting with Google's latest move. Gemini 3.1 Pro just landed and it's showing some serious improvements on ARC-AGI 2, which is basically the gold standard for testing how well AI can handle novel reasoning tasks. We're talking about a 2x improvement over Gemini 3.0, which is actually pretty significant. ARC-AGI is notoriously difficult because it tests whether models can generalize to completely new problems they've never seen before.
+Google fired back at OpenAI today with Gemini 3.1 Pro, claiming it scores twice as high as the previous version on ARC-AGI tests. Translation: Google thinks they're winning the reasoning race now, and they want everyone to know it.
 
-What's interesting here is the timing. Google's been playing catch-up in the reasoning space while OpenAI has been getting all the attention with their o-series models. But this suggests Google's reasoning approach might be maturing fast. For researchers, this is worth paying attention to because ARC-AGI improvements often translate to better performance on complex coding and mathematical reasoning tasks. The details are still sparse, but if you're building applications that need strong logical reasoning, this could be a game-changer.
+OpenAI showed us their AI's first attempts at proving graduate-level math theorems for something called the First Proof challenge. The submissions are messy, the logic is wonky, but watching an AI try to think through expert math problems? Kind of wild to see the thought process laid bare.
 
-Next up, let's talk about speed. Taalas, this new Canadian hardware startup, just announced they can run Llama 3.1 8B at 17,000 tokens per second. That's not a typo. Their custom ASIC approach is delivering what they're calling 16,960 tokens per second per user, which is absolutely insane compared to what we're used to seeing.
+Hugging Face just absorbed GGML and llama.cpp — that's the code powering most local AI setups right now. Big move for keeping AI models running on your laptop instead of big tech's servers, and honestly not sure if this centralizes things more or keeps them open.
 
-This matters because we've been hitting a wall with inference speed on traditional hardware. Everyone's been throwing more GPUs at the problem, but Taalas went the custom silicon route. Think of it like the difference between running code on a general-purpose CPU versus a specialized chip designed for exactly one thing. The tradeoff is obvious though — you're locked into one specific model architecture. But for production deployments where you know exactly what model you want to run and speed is everything, this could be transformative.
-
-For developers, this signals that we're entering an era where model inference might become so fast it fundamentally changes how we think about AI interactions. Imagine building applications where the AI response feels truly instantaneous. The custom ASIC thesis is basically betting that specialized hardware will beat general-purpose solutions for AI inference, and honestly, looking at these numbers, they might be right.
-
-Moving on to some important infrastructure news. Hugging Face just acquired GGML and llama.cpp, which might sound technical but it's actually huge for anyone working with local AI. These are the tools that make it possible to run large language models on your laptop, your server, or basically any hardware you have lying around.
-
-GGML is the quantization and inference library that powers llama.cpp, and llama.cpp is probably the most widely used tool for running models locally. If you've ever downloaded a model and run it on your own machine instead of hitting an API, you've probably used these tools without even knowing it. The fact that Hugging Face is bringing these projects in-house suggests they're serious about making local AI development sustainable long-term.
-
-This is smart positioning from Hugging Face. While everyone else is focused on cloud APIs and centralized inference, they're doubling down on the open source, run-anywhere approach. For researchers and developers who care about privacy, cost control, or just want to tinker without API limits, this is genuinely good news.
-
-And speaking of OpenAI, they're making some speed improvements of their own. Word is that GPT-5.3-Codex-Spark is now 30% faster and serving over 1200 tokens per second. That's solid, but when you compare it to what Taalas is doing with custom hardware, it really highlights how the inference speed race is heating up.
-
-The broader pattern here is pretty clear. We're seeing performance improvements across the board — Google pushing reasoning capabilities, custom hardware delivering unprecedented speed, and the infrastructure getting more robust. For developers, this means the tools are getting better fast, but it also means the landscape is shifting quickly. What's cutting-edge today might be table stakes in six months.
-
-That's it for today — catch you tomorrow.
+Full details and links in the description — catch you tomorrow.
