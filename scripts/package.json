@@ -1,0 +1,10 @@
+{
+  "name": "whatsapp-sender",
+  "version": "1.0.0",
+  "description": "Send AI News Caster briefing via WhatsApp",
+  "main": "send_whatsapp.js",
+  "dependencies": {
+    "whatsapp-web.js": "^1.23.0",
+    "qrcode-terminal": "^0.12.0"
+  }
+}
