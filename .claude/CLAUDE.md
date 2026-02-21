@@ -67,12 +67,15 @@ pip install -r requirements.txt
 python -m src.main
 ```
 
-## WhatsApp Delivery
-Use the `openclaw` CLI (already installed and running on this machine):
+## WhatsApp Delivery (LOCAL ONLY)
+WhatsApp delivery runs **locally on the host machine** via the `openclaw` CLI.
+It connects through a local WhatsApp gateway — it CANNOT run on GitHub Actions or any remote CI.
+
+**There is no `WHATSAPP_SESSION` secret.** The session is managed by the local OpenClaw gateway daemon.
 
 ```bash
 openclaw message send --channel whatsapp \
-  --target +923479075154 \
+  --target "$WHATSAPP_TARGET_NUMBER" \
   --media <path-to-audio.mp3> \
   --message "🎙️ Your AI briefing is ready"
 ```
@@ -80,16 +83,23 @@ openclaw message send --channel whatsapp \
 In Python:
 ```python
 import subprocess
+import os
 
 def deliver_whatsapp(audio_path):
+    target = os.getenv("WHATSAPP_TARGET_NUMBER", "+923479075154")
     subprocess.run([
         "openclaw", "message", "send",
         "--channel", "whatsapp",
-        "--target", "+923479075154",
+        "--target", target,
         "--media", audio_path,
         "--message", "🎙️ Your AI briefing is ready"
     ], check=True)
 ```
+
+**Important:** If building a GitHub Actions workflow, separate concerns:
+- GH Actions: aggregate + script + TTS → generate audio artifact
+- Local cron: download artifact → deliver via openclaw
+Or just run the entire pipeline locally via cron (simpler for v1).
 
 ## TODO
 ### Phase 1 — Daily Delivery
