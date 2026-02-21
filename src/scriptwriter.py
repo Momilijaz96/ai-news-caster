@@ -63,3 +63,14 @@ def write_script(entries: list[dict], config_path: str = "config/config.yaml") -
     print(f"  Script generated: {word_count} words (~{est_minutes:.1f} min read time)")
 
     return script
+
+
+def extract_story_list(entries: list[dict], max_stories: int = 8) -> list[dict]:
+    """Return top N entries as a structured list for summary generation.
+
+    Each returned dict contains keys: 'title', 'link', 'source'.
+    """
+    return [
+        {"title": e["title"], "link": e["link"], "source": e["source"]}
+        for e in entries[:max_stories]
+    ]

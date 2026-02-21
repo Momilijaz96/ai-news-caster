@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from src.aggregator import aggregate
-from src.scriptwriter import write_script
+from src.scriptwriter import write_script, extract_story_list, load_config
 from src.tts import generate_audio
 
 
@@ -57,10 +57,20 @@ def run():
         json.dump(archive_data, f, indent=2, default=str)
     print(f"  Archive saved: {archive_path}")
 
+    # Save summary for WhatsApp delivery
+    cfg = load_config()
+    max_stories = cfg.get("style", {}).get("max_stories", 8)
+    summary = extract_story_list(entries, max_stories=max_stories)
+    summary_path = f"archive/{today}-summary.json"
+    with open(summary_path, "w") as f:
+        json.dump(summary, f, indent=2)
+    print(f"  Summary saved: {summary_path}")
+
     print(f"\n=== Done! ===")
     print(f"  Script: {script_path}")
     print(f"  Audio:  {audio_path}")
-    print(f"  Archive: {archive_path}\n")
+    print(f"  Archive: {archive_path}")
+    print(f"  Summary: {summary_path}\n")
 
 
 if __name__ == "__main__":
