@@ -34,7 +34,7 @@ jobs:
           node-version: '18'
 
       - name: Install Node dependencies
-        run: npm install
+        run: npm ci
         working-directory: scripts
 
       - name: Send WhatsApp briefing
