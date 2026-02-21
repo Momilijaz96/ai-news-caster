@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Our First Proof submissions",
+    "link": "https://openai.com/index/first-proof-submissions",
+    "source": "OpenAI Blog"
+  },
+  {
+    "title": "GGML and llama.cpp join HF to ensure the long-term progress of Local AI",
+    "link": "https://huggingface.co/blog/ggml-joins-hf",
+    "source": "HuggingFace Blog"
+  },
+  {
+    "title": "Train AI models with Unsloth and Hugging Face Jobs for FREE",
+    "link": "https://huggingface.co/blog/unsloth-jobs",
+    "source": "HuggingFace Blog"
+  },
+  {
+    "title": "\u300c\u30c7\u30fc\u30bf\u4e0d\u8db3\u300d\u306e\u58c1\u3092\u8d8a\u3048\u308b\uff1a\u5408\u6210\u30da\u30eb\u30bd\u30ca\u304c\u65e5\u672c\u306eAI\u958b\u767a\u3092\u52a0\u901f",
+    "link": "https://huggingface.co/blog/nvidia/nemotron-personas-japan-nttdata-ja",
+    "source": "HuggingFace Blog"
+  },
+  {
+    "title": "[AINews] The Custom ASIC Thesis",
+    "link": "https://www.latent.space/p/ainews-the-custom-asic-thesis",
+    "source": "Latent Space"
+  },
+  {
+    "title": "[AINews] Gemini 3.1 Pro: 2x 3.0 on ARC-AGI 2",
+    "link": "https://www.latent.space/p/ainews-gemini-31-pro-2x-30-on-arc",
+    "source": "Latent Space"
+  },
+  {
+    "title": "Bitter Lessons in Venture vs Growth: Anthropic vs OpenAI, Noam Shazeer, World Labs, Thinking Machines, Cursor, ASIC Economics \u2014 Martin Casado & Sarah Wang of a16z",
+    "link": "https://www.latent.space/p/a16z",
+    "source": "Latent Space"
+  },
+  {
+    "title": "Quoting Thibault Sottiaux",
+    "link": "https://simonwillison.net/2026/Feb/21/thibault-sottiaux/#atom-everything",
+    "source": "Simon Willison"
+  }
+]
