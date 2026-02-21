@@ -1,14 +1,17 @@
 """WhatsApp delivery via openclaw CLI."""
 
-import json
 import os
 import shutil
 import subprocess
 from pathlib import Path
 
 
-def deliver_whatsapp(audio_path: str, summary_path: str) -> None:
-    """Send MP3 voice note + text summary to WhatsApp via openclaw.
+def deliver_whatsapp(audio_path: str, text: str) -> None:
+    """Send MP3 voice note + English text summary to WhatsApp via openclaw.
+
+    Args:
+        audio_path: Path to the MP3 audio file (Urdu TTS briefing).
+        text: English summary string to send as the WhatsApp text message.
 
     Requires:
         - openclaw installed and running locally
@@ -32,19 +35,11 @@ def deliver_whatsapp(audio_path: str, summary_path: str) -> None:
         "--channel", "whatsapp",
         "--target", target,
         "--media", str(staged),
-        "--message", "🎙️ Your AI news briefing is ready",
+        "--message", "Your AI news briefing is ready",
     ], check=True)
     print("  Voice note sent.")
 
-    # 2. Send text summary
-    stories = json.loads(Path(summary_path).read_text())
-    lines = ["*🎙️ Today's AI News*\n"]
-    for i, story in enumerate(stories, 1):
-        lines.append(f"{i}. *{story['title']}*")
-        lines.append(f"   _{story['source']}_ — {story['link']}\n")
-    lines.append("_Daily briefing by AI News Caster_")
-    text = "\n".join(lines)
-
+    # 2. Send English text summary
     print("  Sending text summary...")
     subprocess.run([
         "openclaw", "message", "send",

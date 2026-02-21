@@ -9,9 +9,10 @@ def load_config(config_path: str = "config/config.yaml") -> dict:
         return yaml.safe_load(f)
 
 
-def build_prompt(entries: list[dict], config: dict) -> str:
+def build_urdu_prompt(entries: list[dict], config: dict) -> str:
     max_stories = config.get("style", {}).get("max_stories", 8)
     target_minutes = config.get("output", {}).get("target_duration_minutes", 12)
+    target_words = int(target_minutes * 130)  # ~130 wpm for Urdu TTS
 
     entries_text = ""
     for i, entry in enumerate(entries, 1):
@@ -20,54 +21,85 @@ def build_prompt(entries: list[dict], config: dict) -> str:
         entries_text += f"   Published: {entry['published']}\n"
         entries_text += f"   Summary: {entry['summary']}\n"
 
-    return f"""Tu ek AI news briefing likh raha hai jo audio mein sunai degi — jaise koi dost subah chai pe AI ki latest cheezein bata raha ho.
+    return f"""آپ ایک AI نیوز بریفنگ لکھ رہے ہیں جو آڈیو میں سنائی دے گی — جیسے کوئی دوست صبح چائے پر AI کی تازہ ترین خبریں بتا رہا ہو۔
 
-Neeche diye gaye news entries mein se top 5-{max_stories} pick kar — woh jo actual mein kaam ki hain developers aur researchers ke liye. Phir poora script likh.
+نیچے دیے گئے news entries میں سے top 5-{max_stories} pick کریں — وہ جو developers اور researchers کے لیے واقعی کام کی ہیں۔ پھر پورا script لکھیں۔
 
 NEWS ENTRIES:
 {entries_text}
 
-STRUCTURE (bilkul isi order mein):
+STRUCTURE (بالکل اسی ترتیب میں):
 
-1. INTRO (2 lines):
-   Seedha shuru ho. Kuch aisa: "Yaar, [date] hai — aaj AI mein kya ho raha hai sunlo." Koi lengthy greeting nahi.
+1. INTRO (2 لائنیں):
+   سیدھا شروع کریں۔ کچھ ایسا: "یار، آج [date] ہے — آج AI میں کیا ہو رہا ہے سنو۔" کوئی لمبی greeting نہیں۔
 
-2. ESPRESSO SHOT (30-40 seconds):
-   Aaj ki top 3 cheezein ek ek line mein, ekdum punch ke saath. Kuch aisa:
-   "Aaj teen cheezein — pehli: [1 line]. Doosri: [1 line]. Teesri: [1 line]. Chalo detail mein chalte hain."
+2. ESPRESSO SHOT (30-40 سیکنڈ):
+   آج کی top 3 چیزیں ایک ایک لائن میں، بالکل punch کے ساتھ۔ کچھ ایسا:
+   "آج تین چیزیں — پہلی: [1 لائن]۔ دوسری: [1 لائن]۔ تیسری: [1 لائن]۔ چلو detail میں چلتے ہیں۔"
 
-3. STORY DETAILS (har story ke liye):
-   Har story ko 2-3 minute do. Transition natural rakho jaise "Theek hai, ab pehli wali pe aate hain..." ya "Ab doosri baat..."
-   Har story mein: kya hua, kyun matter karta hai developer/researcher ke liye, teri apni honest rai.
+3. STORY DETAILS (ہر story کے لیے):
+   ہر story کو 2-3 منٹ دیں۔ Transition قدرتی رکھیں جیسے "ٹھیک ہے، اب پہلی والی پر آتے ہیں..." یا "اب دوسری بات..."
+   ہر story میں: کیا ہوا، developers/researchers کے لیے کیوں اہم ہے، اپنی honest رائے۔
 
-4. SIGN OFF (1 line):
-   "Bas yaar, itna tha aaj ka — kal milte hain."
+4. SIGN OFF (1 لائن):
+   "بس یار، اتنا تھا آج کا — کل ملتے ہیں۔"
 
 TONE RULES:
-- Roman Urdu mein likh — jaise Pakistani log actually bolte hain. Technical terms English mein rehne do (model, benchmark, API, framework, open source, paper, etc.)
-- Bilkul casual — koi anchoring nahi, koi formal language nahi
-- Opinions daal — "yeh actually kafi solid hai", "mujhe nahi lagta yeh kuch khas hai", "yeh interesting hai kyunki..."
-- Chhote chhote sentences, natural pauses
-- Total script {target_minutes} minutes ka hona chahiye (~{target_minutes * 150} words at 150 wpm)
+- پورا script صحیح اردو رسم الخط میں لکھیں — Roman Urdu نہیں
+- Technical terms انگریزی میں رہنے دیں (model, benchmark, API, framework, open source, paper, dataset, fine-tuning, inference, GPU, LLM, agent, prompt, token وغیرہ)
+- بالکل casual — کوئی anchoring نہیں، کوئی formal language نہیں
+- آراء شامل کریں — "یہ واقعی کافی solid ہے"، "مجھے نہیں لگتا یہ کچھ خاص ہے"، "یہ interesting ہے کیونکہ..."
+- چھوٹے چھوٹے جملے، قدرتی وقفے
+- کل script تقریباً {target_words} الفاظ کا ہونا چاہیے (~{target_minutes} منٹ at 130 wpm)
 
 FORMATTING:
-- Koi markdown nahi, koi headers nahi, koi bullet points nahi — yeh spoken script hai
-- Koi stage directions ya [brackets] nahi
-- Poora script likh, word-for-word ready to read aloud
+- کوئی markdown نہیں، کوئی headers نہیں، کوئی bullet points نہیں — یہ spoken script ہے
+- کوئی stage directions یا [brackets] نہیں
+- پورا script لکھیں، word-for-word، بلند آواز سے پڑھنے کے لیے تیار
 
-Ab script likh."""
+اب script لکھیں۔"""
 
 
-def write_script(entries: list[dict], config_path: str = "config/config.yaml") -> str:
-    """Use Claude to write a briefing script from aggregated news entries."""
+def build_english_summary_prompt(entries: list[dict], config: dict) -> str:
+    max_stories = config.get("style", {}).get("max_stories", 8)
+
+    entries_text = ""
+    for i, entry in enumerate(entries, 1):
+        entries_text += f"\n---\n{i}. [{entry['source']}] {entry['title']}\n"
+        entries_text += f"   Link: {entry['link']}\n"
+        entries_text += f"   Published: {entry['published']}\n"
+        entries_text += f"   Summary: {entry['summary']}\n"
+
+    return f"""Write a short English summary of today's AI news for a WhatsApp message. Pick the top 5-{max_stories} most relevant stories for developers and researchers.
+
+NEWS ENTRIES:
+{entries_text}
+
+FORMAT:
+- Start with a single intro line (e.g. "Here's your AI news for today:")
+- Then one bullet point per story:
+  • Story title — one sentence summary. Link: <url>
+- End with a short sign-off line (e.g. "That's it for today!")
+
+RULES:
+- Plain text only — no markdown, no bold, no asterisks, no headers
+- Keep it concise — this is a text message, not an article
+- Each bullet point should fit in 2-3 lines max
+- Include the link for each story
+
+Write the summary now."""
+
+
+def write_urdu_script(entries: list[dict], config_path: str = "config/config.yaml") -> str:
+    """Use Claude to write a proper Urdu script for TTS audio from aggregated news entries."""
     config = load_config(config_path)
     llm_config = config.get("llm", {})
 
     client = anthropic.Anthropic()
 
-    prompt = build_prompt(entries, config)
+    prompt = build_urdu_prompt(entries, config)
 
-    print("  Sending to Claude...")
+    print("  Sending to Claude (Urdu script)...")
     message = client.messages.create(
         model=llm_config.get("model", "claude-sonnet-4-20250514"),
         max_tokens=llm_config.get("max_tokens", 4000),
@@ -76,10 +108,32 @@ def write_script(entries: list[dict], config_path: str = "config/config.yaml") -
 
     script = message.content[0].text
     word_count = len(script.split())
-    est_minutes = word_count / 150
-    print(f"  Script generated: {word_count} words (~{est_minutes:.1f} min read time)")
+    est_minutes = word_count / 130  # Urdu TTS ~130 wpm
+    print(f"  Urdu script generated: {word_count} words (~{est_minutes:.1f} min audio)")
 
     return script
+
+
+def write_english_summary(entries: list[dict], config_path: str = "config/config.yaml") -> str:
+    """Use Claude to write a short English summary suitable for WhatsApp text delivery."""
+    config = load_config(config_path)
+    llm_config = config.get("llm", {})
+
+    client = anthropic.Anthropic()
+
+    prompt = build_english_summary_prompt(entries, config)
+
+    print("  Sending to Claude (English summary)...")
+    message = client.messages.create(
+        model=llm_config.get("model", "claude-sonnet-4-20250514"),
+        max_tokens=llm_config.get("max_tokens", 4000),
+        messages=[{"role": "user", "content": prompt}],
+    )
+
+    summary = message.content[0].text
+    print(f"  English summary generated: {len(summary.split())} words")
+
+    return summary
 
 
 def extract_story_list(entries: list[dict], max_stories: int = 8) -> list[dict]:

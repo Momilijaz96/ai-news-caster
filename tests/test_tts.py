@@ -7,7 +7,7 @@ from src.tts import generate_audio
 
 
 def test_generate_audio_calls_communicate_with_correct_voice(tmp_path):
-    """generate_audio should call edge_tts.Communicate with en-US-JennyNeural."""
+    """generate_audio should call edge_tts.Communicate with ur-PK-AsadNeural."""
     output_path = str(tmp_path / "output.mp3")
     script = "Hello, this is a test briefing."
 
@@ -17,7 +17,7 @@ def test_generate_audio_calls_communicate_with_correct_voice(tmp_path):
     with patch("src.tts.edge_tts.Communicate", return_value=mock_communicate_instance) as mock_communicate:
         result = generate_audio(script, output_path)
 
-    mock_communicate.assert_called_once_with(script, "en-US-JennyNeural")
+    mock_communicate.assert_called_once_with(script, "ur-PK-AsadNeural")
     mock_communicate_instance.save.assert_awaited_once_with(output_path)
     assert result == output_path
 

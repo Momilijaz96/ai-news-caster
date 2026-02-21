@@ -5,7 +5,7 @@ from pathlib import Path
 
 import edge_tts
 
-DEFAULT_VOICE = "en-US-JennyNeural"
+DEFAULT_VOICE = "ur-PK-AsadNeural"
 
 
 async def _generate_audio_async(script: str, output_path: str, voice: str) -> None:

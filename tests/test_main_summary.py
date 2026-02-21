@@ -19,7 +19,8 @@ def test_summary_json_saved(tmp_path, monkeypatch):
     ]
 
     with patch("src.main.aggregate", return_value=fake_entries), \
-         patch("src.main.write_script", return_value="This is the script."), \
+         patch("src.main.write_urdu_script", return_value="This is the Urdu script."), \
+         patch("src.main.write_english_summary", return_value="Here's your AI news for today:\n• Story A — summary. Link: https://a.com"), \
          patch("src.main.generate_audio", return_value=str(tmp_path / "audio/briefing-2026-02-21.mp3")):
         from src.main import run
         run()
