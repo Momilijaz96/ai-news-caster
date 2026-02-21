@@ -14,6 +14,13 @@ from src.scriptwriter import write_script
 from src.tts import generate_audio
 
 
+def config_max_stories(config_path: str = "config/config.yaml") -> int:
+    import yaml
+    with open(config_path) as f:
+        cfg = yaml.safe_load(f)
+    return cfg.get("style", {}).get("max_stories", 8)
+
+
 def run():
     today = datetime.now().strftime("%Y-%m-%d")
     print(f"\n=== AI News Caster - {today} ===\n")
@@ -57,10 +64,19 @@ def run():
         json.dump(archive_data, f, indent=2, default=str)
     print(f"  Archive saved: {archive_path}")
 
+    # Save summary for WhatsApp delivery
+    from src.scriptwriter import extract_story_list
+    summary = extract_story_list(entries, max_stories=config_max_stories())
+    summary_path = f"archive/{today}-summary.json"
+    with open(summary_path, "w") as f:
+        json.dump(summary, f, indent=2)
+    print(f"  Summary saved: {summary_path}")
+
     print(f"\n=== Done! ===")
     print(f"  Script: {script_path}")
     print(f"  Audio:  {audio_path}")
-    print(f"  Archive: {archive_path}\n")
+    print(f"  Archive: {archive_path}")
+    print(f"  Summary: {summary_path}\n")
 
 
 if __name__ == "__main__":
