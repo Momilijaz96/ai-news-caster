@@ -1,5 +1,8 @@
 # Dependencies
 node_modules/
+
+# WhatsApp session (never commit — contains auth credentials)
+scripts/.wwebjs_auth/
 venv/
 .venv/
 __pycache__/
