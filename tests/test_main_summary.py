@@ -10,7 +10,7 @@ def test_summary_json_saved(tmp_path, monkeypatch):
     (tmp_path / "archive").mkdir()
     (tmp_path / "config").mkdir()
 
-    # Write a minimal config so config_max_stories doesn't fail
+    # Write a minimal config so load_config doesn't fail
     (tmp_path / "config" / "config.yaml").write_text("style:\n  max_stories: 8\n")
 
     fake_entries = [
@@ -19,9 +19,9 @@ def test_summary_json_saved(tmp_path, monkeypatch):
     ]
 
     with patch("src.main.aggregate", return_value=fake_entries), \
-         patch("src.main.write_urdu_script", return_value="This is the Urdu script."), \
-         patch("src.main.write_english_summary", return_value="Here's your AI news for today:\n• Story A — summary. Link: https://a.com"), \
-         patch("src.main.generate_audio", return_value=str(tmp_path / "audio/briefing-2026-02-21.mp3")):
+         patch("src.main.write_script", return_value="This is the briefing script."), \
+         patch("src.main.generate_audio", return_value=str(tmp_path / "audio/briefing-2026-02-21.mp3")), \
+         patch("src.main.deliver_whatsapp"):
         from src.main import run
         run()
 

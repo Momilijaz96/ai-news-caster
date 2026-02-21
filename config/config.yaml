@@ -4,7 +4,7 @@
 output:
   audio_format: "mp3"
   target_duration_minutes: 12  # Aim for 10-15 min
-  voice: "ur-PK-UzmaNeural"  # edge-tts voice
+  voice: "en-US-JennyNeural"  # edge-tts voice
   
 # Delivery
 delivery:
@@ -34,4 +34,4 @@ llm:
 # TTS settings
 tts:
   provider: "edge-tts"  # free, no API key required
-  voice: "ur-PK-UzmaNeural"
+  voice: "en-US-JennyNeural"
